@@ -9,7 +9,7 @@ This software is provided on an "AS-IS-BASIS".
 Uses JavaOSC library by C.Ramakrishnan (updated by hoijui).
 * http://www.illposed.com/software/javaosc.html
 * https://github.com/hoijui/JavaOSC
-* 
+
 Uses Android Support Library for backwards compatibility from v.23 to v.11
 * http://developer.android.com/tools/support-library/index.html
 
