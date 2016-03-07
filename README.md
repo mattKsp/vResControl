@@ -9,6 +9,9 @@ This software is provided on an "AS-IS-BASIS".
 Uses JavaOSC library by C.Ramakrishnan (updated by hoijui).
 * http://www.illposed.com/software/javaosc.html
 * https://github.com/hoijui/JavaOSC
+* 
+Uses Android Support Library for backwards compatibility from v.23 to v.11
+* http://developer.android.com/tools/support-library/index.html
 
 ## About
 
@@ -19,7 +22,7 @@ This project is an exercise in implementing OSC communication in an Android app.
 Tested with Resolume Avenue 4 demo.
 * https://resolume.com
 
-## Notes
+### Project Notes
 
 * This app cannot currently cope with bundles. (Make sure Bundles are turned OFF in Resolume OSC Preferences).
 * A few things left to fix.
