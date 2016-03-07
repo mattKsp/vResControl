@@ -12,6 +12,8 @@ Uses JavaOSC library by C.Ramakrishnan (updated by hoijui).
 
 ## About
 
+Repository is an Android Studio project (ver. 1.5.1).
+
 This project is an exercise in implementing OSC communication in an Android app.
 
 Tested with Resolume Avenue 4 demo.
