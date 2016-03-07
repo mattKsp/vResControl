@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_visutal_logo2_800x480"
+    android:weightSum="11"
+    tools:context=".VresControlActivity" >
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="0dp"
+    	android:layout_height="match_parent"
+    	android:orientation="vertical"
+        android:layout_weight="1"
+    	android:weightSum="5" >
+
+    	<ImageView 
+    	   	android:id="@+id/bt_tab3"
+    	   	android:background="@drawable/shape_tab1"
+		    android:layout_width="match_parent"
+		   	android:layout_height="0dp" 
+		   	android:layout_margin="1dp"
+        	android:layout_weight="0.9" />
+    	<ImageView 
+    	   	android:id="@+id/bt_tab2"
+    	   	android:background="@drawable/shape_tab1"
+		    android:layout_width="match_parent"
+		   	android:layout_height="0dp" 
+		   	android:layout_margin="1dp"
+        	android:layout_weight="0.9" />
+    	<ImageView 
+    	   	android:id="@+id/bt_tab1"
+    	   	android:background="@drawable/shape_tab1"
+		    android:layout_width="match_parent"
+		   	android:layout_height="0dp" 
+		   	android:layout_margin="1dp"
+        	android:layout_weight="0.9" />
+    	<ImageView 
+    	   	android:id="@+id/bt_tab0"
+    	   	android:background="@drawable/shape_tab1"
+		    android:layout_width="match_parent"
+		   	android:layout_height="0dp" 
+		   	android:layout_margin="1dp"
+        	android:layout_weight="0.9" />
+    	<ImageView 
+    	   	android:id="@+id/bt_tabSettings"
+    	   	android:background="@drawable/shape_tabsettings1"
+		    android:layout_width="match_parent"
+		   	android:layout_height="0dp" 
+		   	android:layout_margin="1dp"
+        	android:layout_weight="0.8" />
+		<ImageView
+			android:id="@+id/bt_tabExit"
+			android:background="@drawable/shape_tabexit"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_margin="1dp"
+			android:layout_weight="0.6" />
+    	
+    </LinearLayout>
+        
+    <FrameLayout
+        android:id="@+id/page2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10" />
+
+</LinearLayout>

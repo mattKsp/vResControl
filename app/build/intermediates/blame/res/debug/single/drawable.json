@@ -1,0 +1,290 @@
+[
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_top.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_top.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_tabsettings1.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_tabsettings1.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_green_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_green_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_left.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_left.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_top.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_top.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\verticalseekbar_progress_bg.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\verticalseekbar_progress_bg.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_tabexit.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_tabexit.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_left.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_left.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_tab1b.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_tab1b.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_orange.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_orange.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_green.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_green.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\myshape.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\myshape.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar2_progress.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\seekbar2_progress.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_right.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_right.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_bot.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_bot.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1c_orange.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1c_orange.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_orange_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_orange_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar2_progress_bg.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\seekbar2_progress_bg.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_blue.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_blue.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_blue_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_blue_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_right.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_right.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_tab1.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_tab1.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_bot.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_bot.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_thumb.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\seekbar_thumb.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_orange_right_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_orange_right_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_progress_bg.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\seekbar_progress_bg.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_top.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_top.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_orange.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_orange.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_right.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_right.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\verticalseekbar_progress.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\verticalseekbar_progress.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_green_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_green_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_ratingbar_full_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_dialog_material_background_dark.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_orange_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_orange_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_blue_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_blue_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_orange_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_orange_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b_green.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b_green.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_visutal_logo2_800x480.9.png",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\bg_visutal_logo2_800x480.9.png"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_blue.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_blue.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seekbar_progress.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\seekbar_progress.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_orange_left_nostroke.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_orange_left_nostroke.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_bot.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_bot.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_left.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_left.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt2.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt2.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1_orange.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1_orange.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_bt1b.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_bt1b.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    }
+]

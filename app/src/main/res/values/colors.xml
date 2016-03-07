@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- <color name="actionbar_title_color">#224894</color> -->
+    <color name="actionbar_title_color">#FFFFFF</color>
+    
+    <color name="vTrans">#80000000</color>
+    
+    <color name="vBlack">#000000</color>
+    <color name="vWhite">#FFFFFF</color>
+    
+    <color name="vGrey1">#3E4448</color>
+    <color name="vgrey2">#D2D5D2</color>
+    <color name="vGrey3">#3B4047</color>
+ 
+    <color name="sherlock_blue">#33b5e5</color>
+    <color name="vBlue">#DD87CEEB</color>
+    <color name="vBlueTrans">#8087CEEB</color>
+    <color name="vBlue1">#0099CC</color>
+    <color name="vPurple">#AA66CC</color>
+    <color name="vPurple1">#9933CC</color>
+    <color name="vGreen">#DD7CFC00</color>
+    <color name="vGreenTrans">#807CFC00</color>
+    <color name="vGreen1">#669900</color>
+    <color name="vOrange">#DDFFBB33</color>
+    <color name="vOrangeTrans">#80FFBB33</color>
+    <color name="vOrange1">#FF8800</color>
+    <color name="vRed">#FF4444</color>
+    <color name="vRed1">#CC0000</color>
+    <color name="vRed1Trans">#80CC0000</color>
+    <color name="vSandy1Trans">#80FFDEAD</color>
+
+</resources>

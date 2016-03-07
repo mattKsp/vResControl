@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">vResControl</string>
+    <string name="app_version">Version 2.0</string>
+    <string name="back">Back</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="stop">Stop</string>
+    <string name="fx">FX</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="wifiMessage">Please check your WIFI is turned on and connected</string>
+    <string name="service_name">service</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_theme">Theme</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_fragment_resolume1">Resolume 1</string>
+	<string name="dialog_controls_title">Controls</string>
+    <string name="dialog_controls_text">Tab 1 - Main Transport Control \n. comp/layer focus \n. . (comp/layer) play direction \n. . (current clip) QWERTY position jump \n. . (current clip) beatlooper (delesect all to turn off) \n. composition byass, clear, opacity.volume slider (with up.down) \n. bpm tap, resync, paused \n \nTab 2 - Layer Control \n. 4x layers, from right to left (there is good reason for this) \n. . slider (with up.down), bypass, solo, clear \n. A.B crossfader (with A.B) \n \nTab 3 - Clip Trigger \n. column triggers 1 to 8 \n. clip triggers 1 to 8, 4 layers (from bottom to top, to match Resolume) \n \nTab 4 - Composition Fx \n. composition Fx links 1 to 8 (with up.down) with bypass \n</string>
+    <string name="dialog_about_title">About</string>
+    <string name="dialog_about_text">This app is for basic control of Resolume \n \nWritten by matt standish \nCopyright (&#169;) 2016 \nM T S Standish | ksp \n \nThis software is provided on an AS-IS-BASIS \n  \n \nIMPORTANT \nThis app cannot currently cope with bundles \nMake sure Bundles are turned OFF in Resolume OSC Preferences \n \n \n. A few things left to fix. Not optimised for tablets yet. \n \n. The layout is intentionally minimal. There is not much screen space on a mobile device, and there are not many different ways to re-arrange things in grids. \n \n. Communication is done via OSC/UDP over WIFI/LAN. Resolume accepts input from many devices at once, this enables several people to VJ together pretty easily (..but unfortunately Resolume can only talk back to 1 device) \n</string>
+    <string name="dialog_privacyStatement_title">Privacy Statement</string>
+    <string name="dialog_privacyStatement_text">We respect data privacy, no data is stored by this app \n</string>
+    <string name="dialog_librariesUsed_title">Libraries Used</string>
+    <string name="dialog_librariesUsed_text">JavaOSC \nCopyright (&#169;) 2002&#8211;2014, C. Ramakrishnan / Illposed Software \nAll rights reserved \nhttp://www.illposed.com/software/javaosc.html \n \n \nAndroid Supprt Library v7 \nhttp://developer.android.com/tools/support-library/index.html \n</string>
+    <string name="dialog_help_title">Help</string>
+    <string name="dialog_help_text">IMPORTANT \nThis app cannot currently cope with bundles \nMake sure Bundles are turned OFF in Resolume OSC Preferences \n \nIf it\'s still not working.. \n. If you have a firewall please allow the app through \n. Some phones may require root access \n. Delete and re-install (settings can get mucked up easily, this will make sure that everything is reset) \n</string>
+    <string name="dialog_stats_title">Stats</string>
+    <string name="dialog_stats_text">admin stats, for those times you just gotta know</string>
+    <string name="dialog_settings_centrethedesk_title">Centre The Desk</string>
+    <string name="dialog_settings_centrethedesk_text">Do you really want to reset all buttons and sliders?</string>
+    <string name="dialog_settings_yesno_title">Reset</string>
+    <string name="dialog_settings_yesno_text">Do you really want to reset everything?</string>
+    <string name="prefKey_vResOSCserver_text">Keep everything n sync</string>
+    <string name="prefKey_layout_r_text">Tab selection buttons to the left or the right</string>
+    <string name="prefKey_invertTabs_text">Reverse the order in which tabs are selected</string>
+    <string name="prefKey_swapLayerSliders">Reverse the order of sliders (and buttons) on the layer control tab</string>
+    <string name="prefKey_swapSliderBts_text">Swap the sliders and buttons around (left to right) on the layer control tab</string>
+    <string name="prefKey_reset_text">Reset to defaults</string>
+    <string name="dialog_settings_doyouwanttoexit_title">Do You Want To Exit</string>
+    
+</resources>
