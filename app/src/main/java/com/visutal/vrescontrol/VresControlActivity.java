@@ -7,7 +7,6 @@ import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,13 +24,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import android.view.Window;
 import com.illposed.osc.OSCListener;
 import com.illposed.osc.OSCMessage;
 import com.illposed.osc.OSCPortIn;
 import com.illposed.osc.OSCPortOut;
-
 import com.visutal.utils.ServerComms;
 import com.visutal.utils.Utils;
 
@@ -55,7 +52,6 @@ public class VresControlActivity extends AppCompatActivity
 	public boolean confirmExit = false;
 	
 	public int layerSlidersModeInt = 2;
-	//public int fxSlidersModeInt = 0;  // moved to ccset
 	
 	int curCheckPosition = 0;
 	int prevCheckPosition = 0;
@@ -105,11 +101,9 @@ public class VresControlActivity extends AppCompatActivity
 
 	//so it doesnt do all this when leaving from the settings
 	if (!isLeaving) {
-		//ccSet = (CcSet) getApplication();
 		appSettings = PreferenceManager.getDefaultSharedPreferences(this);
         runSharedPreferences();
         getSavedState();
-        //can use LOCAL_DEBUG from saved prefs from here on..
         Log.d("HowFar", "VresControlActivity | onCreate | back from runSharedPreferences and getSavedState");
 
         setupView();
@@ -181,8 +175,6 @@ public class VresControlActivity extends AppCompatActivity
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 		getSupportActionBar().hide();
 
-        //if (swapSliderBts) {}		//do this in the fragment?
-        //if (layout_r) {	//swapped it so it starts on the right
         if (!layout_r) {
         	if (invertTabs) {setContentView(layoutri);} 
         	else {setContentView(layoutr);}
@@ -193,7 +185,6 @@ public class VresControlActivity extends AppCompatActivity
 		}
 
 		Log.d("HowFar", "VresControlActivity | view setup");
-    	return;
 	}
 
 	void setupButtons() {
@@ -258,7 +249,6 @@ public class VresControlActivity extends AppCompatActivity
 		});
 		
 		Log.d("HowFar", "VresControlActivity | buttons setup");
-    	return;
 	}
 	
 	void showTab(int index) {
@@ -322,7 +312,6 @@ public class VresControlActivity extends AppCompatActivity
         	}
     		
         	Log.d("HowFar", "VresControlActivity | Tabs setup");
-        	return;
     }
 	
 	private void swapTabIcons(int index) {
@@ -377,7 +366,7 @@ public class VresControlActivity extends AppCompatActivity
     		editor.putBoolean("hasRunBefore", true);
     		editor.commit();
 
-            CcSet.i().saveAll(appSettings); // is this needed ?   eg. as it will initialise an array with 0 default
+            //CcSet.i().saveAll(appSettings); // is this needed ?   eg. as it will initialise an array with 0 default
     		
     		Log.d("HowFar", "has NOT run before");
     	 }
@@ -1398,7 +1387,6 @@ public class VresControlActivity extends AppCompatActivity
 	
 	public void onFrag1OSCSendInt(String OSCAddress, int argsOut) {
 		Log.d("HowFar", "VresControlActivity | onFrag1OSCSendInt");
-		//Object args [] = {argsOut};
 		Object args = argsOut;
 		doOSCSend(OSCAddress, args);
 	}
@@ -1407,11 +1395,11 @@ public class VresControlActivity extends AppCompatActivity
 		Object args = argsOut;
 		doOSCSend(OSCAddress, args);
 	}
-	public void onFrag1OSCSendString(String OSCAddress, String argsOut) {
-		Log.d("HowFar", "VresControlActivity | onFrag1OSCSendString");
-		Object args = argsOut;
-		doOSCSend(OSCAddress, args);
-	}
+//	public void onFrag1OSCSendString(String OSCAddress, String argsOut) {
+//		Log.d("HowFar", "VresControlActivity | onFrag1OSCSendString");
+//		Object args = argsOut;
+//		doOSCSend(OSCAddress, args);
+//	}
 	
 	public void onFrag2OSCSendInt(String OSCAddress, int argsOut) {
 		Log.d("HowFar", "VresControlActivity | onFrag2OSCSendInt");
@@ -1423,11 +1411,11 @@ public class VresControlActivity extends AppCompatActivity
 		Object args = argsOut;
 		doOSCSend(OSCAddress, args);
 	}
-	public void onFrag2OSCSendString(String OSCAddress, String argsOut) {
-		Log.d("HowFar", "VresControlActivity | onFrag2OSCSendString");
-		Object args = argsOut;
-		doOSCSend(OSCAddress, args);
-	}
+//	public void onFrag2OSCSendString(String OSCAddress, String argsOut) {
+//		Log.d("HowFar", "VresControlActivity | onFrag2OSCSendString");
+//		Object args = argsOut;
+//		doOSCSend(OSCAddress, args);
+//	}
 	
 	public void onFrag3OSCSendInt(String OSCAddress, int argsOut) {
 		Log.d("HowFar", "VresControlActivity | onFrag3OSCSendInt");
@@ -1499,7 +1487,6 @@ public class VresControlActivity extends AppCompatActivity
 		mServerCommsResolumeUdpPort = appSettings.getInt("resolumeUdpPort", 7000);
 		localUdpPort = appSettings.getInt("localUdpPort", 7001);
 		layerSlidersModeInt = appSettings.getInt("layerSlidersModeInt", 2);
-		//fxSlidersModeInt = appSettings.getInt("fxSlidersModeInt", 0);
         confirmExit = appSettings.getBoolean("confirmExit", false);
 
         CcSet.i().loadAll(appSettings);
@@ -1510,7 +1497,6 @@ public class VresControlActivity extends AppCompatActivity
 		} catch (Exception ex) {System.out.println(ex.toString());}
 
 		Log.d("HowFar", "VresControlActivity | getSavedState");
-		return;
 	}
 	
 	private void setSavedState() {
@@ -1522,7 +1508,6 @@ public class VresControlActivity extends AppCompatActivity
         CcSet.i().saveAll(appSettings);
  		
 		Log.d("HowFar", "VresControlActivity | setSavedState");
-		return;
 	}
 
 
@@ -1551,7 +1536,6 @@ public class VresControlActivity extends AppCompatActivity
             }
         });
 		dialog.show();
-		return;
 	}
 
     private void doExit() {

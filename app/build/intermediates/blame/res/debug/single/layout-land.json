@@ -12,12 +12,12 @@
         "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\layout-land\\fragment_resolume1.xml"
     },
     {
-        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_vrescontrol_r_i.xml",
-        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\layout-land\\activity_vrescontrol_r_i.xml"
-    },
-    {
         "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragment_resolume2.xml",
         "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\layout-land\\fragment_resolume2.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_vrescontrol_r_i.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\layout-land\\activity_vrescontrol_r_i.xml"
     },
     {
         "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_vrescontrol.xml",

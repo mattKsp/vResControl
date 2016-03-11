@@ -1,7 +1,6 @@
 package com.visutal.vrescontrol;
 
 import java.net.UnknownHostException;
-
 import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -22,11 +21,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import android.view.Window;
 import com.visutal.utils.ServerComms;
 
-//public class Settings extends PreferenceActivity {
+
 public class Settings extends AppCompatPreferenceActivity {
 
 	public static boolean LOCAL_DEBUG = true;
@@ -502,7 +500,6 @@ public class Settings extends AppCompatPreferenceActivity {
 		prefKey_confirmX.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 if (newValue instanceof Boolean) {
-                    //notYetImplemented();
                     Boolean boolVal = (Boolean) newValue;
                     editor.putBoolean("confirmX", boolVal);
                     editor.commit();
@@ -516,8 +513,7 @@ public class Settings extends AppCompatPreferenceActivity {
 		prefKey_confirmExit.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
 	        public boolean onPreferenceChange(Preference preference, Object newValue) {
 	        	if(newValue instanceof Boolean){
-	        		//notYetImplemented();
-	                Boolean boolVal = (Boolean) newValue;
+	        		Boolean boolVal = (Boolean) newValue;
 	                editor.putBoolean("confirmExit", boolVal);
 		            editor.commit();
 		            Log.w("appSettings", "prefKey_confirmExit " + String.valueOf(boolVal));
@@ -585,7 +581,6 @@ public class Settings extends AppCompatPreferenceActivity {
             }
         });
         dialog.show();
-        return;
     }
 
     private void runYesNoDialog(int title, int text, final boolean resetOrCenter) {
@@ -623,7 +618,6 @@ public class Settings extends AppCompatPreferenceActivity {
             }
         });
         dialog.show();
-        return;
 	}
 
 	private void clearSettings() {
@@ -631,109 +625,110 @@ public class Settings extends AppCompatPreferenceActivity {
     	editor.clear();
     	editor.commit();
     	Log.d("HowFar", "ALL settings have been cleared! please restart");
-    	return;
     }
 
 	private void clearSavedStates() {
+
+		CcSet.i().resetAll(appSettings);
+
 		// should probably just direct each fragment to do this itself...
-    	Editor editor = appSettings.edit();
-
-    	//main activity
-
-		//fragment1
-    	editor.putInt("prevLayer", 0);
-		editor.putInt("currentLayer", 0);
-		editor.putBoolean("bt_compFlip", false);
-		editor.putBoolean("bt_layer1Flip", false);
-		editor.putBoolean("bt_layer2Flip", false);
-		editor.putBoolean("bt_layer3Flip", false);
-		editor.putBoolean("bt_layer4Flip", false);
-
-		editor.putInt("prevBeatloop", 0);
-		editor.putInt("currentBeatloop", 0);
-		editor.putBoolean("bt_beatloop_1Flip", false);
-		editor.putBoolean("bt_beatloop_2Flip", false);
-		editor.putBoolean("bt_beatloop_3Flip", false);
-		editor.putBoolean("bt_beatloop_4Flip", false);
-		editor.putBoolean("bt_beatloop_5Flip", false);
-		editor.putBoolean("bt_beatloop_6Flip", false);
-		editor.putBoolean("bt_beatloop_7Flip", false);
-
-		//editor.putDouble("editText_bpm", bpmInDouble);
-		editor.putBoolean("bt_pausedFlip", false);
-		editor.putBoolean("bt_bypassedFlip", false);
-		editor.putInt("progress_opacityandvolumeInt", 100);
-
-		//fragment2
-		editor.putInt("verticalSeekbar1Progress_audio", 0);
-		editor.putInt("verticalSeekbar2Progress_audio", 0);
-		editor.putInt("verticalSeekbar3Progress_audio", 0);
-		editor.putInt("verticalSeekbar4Progress_audio", 0);
-
-		editor.putInt("verticalSeekbar1Progress_av", 0);
-		editor.putInt("verticalSeekbar2Progress_av", 0);
-		editor.putInt("verticalSeekbar3Progress_av", 0);
-		editor.putInt("verticalSeekbar4Progress_av", 0);
-
-		editor.putInt("verticalSeekbar1Progress_video", 0);
-		editor.putInt("verticalSeekbar2Progress_video", 0);
-		editor.putInt("verticalSeekbar3Progress_video", 0);
-		editor.putInt("verticalSeekbar4Progress_video", 0);
-
-		editor.putBoolean("bt_1_bFlip", false);
-		editor.putBoolean("bt_2_bFlip", false);
-		editor.putBoolean("bt_3_bFlip", false);
-		editor.putBoolean("bt_4_bFlip", false);
-
-		editor.putBoolean("bt_1_sFlip", false);
-		editor.putBoolean("bt_2_sFlip", false);
-		editor.putBoolean("bt_3_sFlip", false);
-		editor.putBoolean("bt_4_sFlip", false);
-
-		editor.putInt("bt_1_abState", 0);
-		editor.putInt("bt_2_abState", 0);
-		editor.putInt("bt_3_abState", 0);
-		editor.putInt("bt_4_abState", 0);
-
-		editor.putInt("seekBar5Prog", 50);
-
-		editor.putBoolean("bt_seekBar_a_state", false);
-		editor.putBoolean("bt_seekBar_b_state", false);
-
-		//fragment3
-
-		//fragment4
-		editor.putInt("verticalSeekbar_fx1Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx2Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx3Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx4Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx5Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx6Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx7Progress_link", 0);
-		editor.putInt("verticalSeekbar_fx8Progress_link", 0);
-
-		editor.putInt("verticalSeekbar_fx1Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx2Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx3Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx4Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx5Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx6Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx7Progress_opacity", 0);
-		editor.putInt("verticalSeekbar_fx8Progress_opacity", 0);
-
-		editor.putBoolean("bt_fx1_bFlip", false);
-		editor.putBoolean("bt_fx2_bFlip", false);
-		editor.putBoolean("bt_fx3_bFlip", false);
-		editor.putBoolean("bt_fx4_bFlip", false);
-		editor.putBoolean("bt_fx5_bFlip", false);
-		editor.putBoolean("bt_fx6_bFlip", false);
-		editor.putBoolean("bt_fx7_bFlip", false);
-		editor.putBoolean("bt_fx8_bFlip", false);
-
-    	editor.commit();
+//    	Editor editor = appSettings.edit();
+//
+//    	//main activity
+//
+//		//fragment1
+//    	editor.putInt("prevLayer", 0);
+//		editor.putInt("currentLayer", 0);
+//		editor.putBoolean("bt_compFlip", false);
+//		editor.putBoolean("bt_layer1Flip", false);
+//		editor.putBoolean("bt_layer2Flip", false);
+//		editor.putBoolean("bt_layer3Flip", false);
+//		editor.putBoolean("bt_layer4Flip", false);
+//
+//		editor.putInt("prevBeatloop", 0);
+//		editor.putInt("currentBeatloop", 0);
+//		editor.putBoolean("bt_beatloop_1Flip", false);
+//		editor.putBoolean("bt_beatloop_2Flip", false);
+//		editor.putBoolean("bt_beatloop_3Flip", false);
+//		editor.putBoolean("bt_beatloop_4Flip", false);
+//		editor.putBoolean("bt_beatloop_5Flip", false);
+//		editor.putBoolean("bt_beatloop_6Flip", false);
+//		editor.putBoolean("bt_beatloop_7Flip", false);
+//
+//		//editor.putDouble("editText_bpm", bpmInDouble);
+//		editor.putBoolean("bt_pausedFlip", false);
+//		editor.putBoolean("bt_bypassedFlip", false);
+//		editor.putInt("progress_opacityandvolumeInt", 100);
+//
+//		//fragment2
+//		editor.putInt("verticalSeekbar1Progress_audio", 0);
+//		editor.putInt("verticalSeekbar2Progress_audio", 0);
+//		editor.putInt("verticalSeekbar3Progress_audio", 0);
+//		editor.putInt("verticalSeekbar4Progress_audio", 0);
+//
+//		editor.putInt("verticalSeekbar1Progress_av", 0);
+//		editor.putInt("verticalSeekbar2Progress_av", 0);
+//		editor.putInt("verticalSeekbar3Progress_av", 0);
+//		editor.putInt("verticalSeekbar4Progress_av", 0);
+//
+//		editor.putInt("verticalSeekbar1Progress_video", 0);
+//		editor.putInt("verticalSeekbar2Progress_video", 0);
+//		editor.putInt("verticalSeekbar3Progress_video", 0);
+//		editor.putInt("verticalSeekbar4Progress_video", 0);
+//
+//		editor.putBoolean("bt_1_bFlip", false);
+//		editor.putBoolean("bt_2_bFlip", false);
+//		editor.putBoolean("bt_3_bFlip", false);
+//		editor.putBoolean("bt_4_bFlip", false);
+//
+//		editor.putBoolean("bt_1_sFlip", false);
+//		editor.putBoolean("bt_2_sFlip", false);
+//		editor.putBoolean("bt_3_sFlip", false);
+//		editor.putBoolean("bt_4_sFlip", false);
+//
+//		editor.putInt("bt_1_abState", 0);
+//		editor.putInt("bt_2_abState", 0);
+//		editor.putInt("bt_3_abState", 0);
+//		editor.putInt("bt_4_abState", 0);
+//
+//		editor.putInt("seekBar5Prog", 50);
+//
+//		editor.putBoolean("bt_seekBar_a_state", false);
+//		editor.putBoolean("bt_seekBar_b_state", false);
+//
+//		//fragment3
+//
+//		//fragment4
+//		editor.putInt("verticalSeekbar_fx1Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx2Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx3Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx4Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx5Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx6Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx7Progress_link", 0);
+//		editor.putInt("verticalSeekbar_fx8Progress_link", 0);
+//
+//		editor.putInt("verticalSeekbar_fx1Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx2Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx3Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx4Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx5Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx6Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx7Progress_opacity", 0);
+//		editor.putInt("verticalSeekbar_fx8Progress_opacity", 0);
+//
+//		editor.putBoolean("bt_fx1_bFlip", false);
+//		editor.putBoolean("bt_fx2_bFlip", false);
+//		editor.putBoolean("bt_fx3_bFlip", false);
+//		editor.putBoolean("bt_fx4_bFlip", false);
+//		editor.putBoolean("bt_fx5_bFlip", false);
+//		editor.putBoolean("bt_fx6_bFlip", false);
+//		editor.putBoolean("bt_fx7_bFlip", false);
+//		editor.putBoolean("bt_fx8_bFlip", false);
+//
+//    	editor.commit();
 
     	Log.d("HowFar", "ALL button and slider states have been cleared!");
-    	return;
 	}
 
 	public void runToast(String text, int length) {
@@ -748,7 +743,7 @@ public class Settings extends AppCompatPreferenceActivity {
 
 	private void notYetImplemented() {
 		runToast("..not implemented yet!", 0);
-	};
+	}
 
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();

@@ -11,8 +11,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Resolume3Fragment extends Fragment {
-	
-	private boolean LOCAL_DEBUG = Settings.LOCAL_DEBUG;
 
     View view;
 
@@ -26,7 +24,7 @@ public class Resolume3Fragment extends Fragment {
 
     // Container Activity must implement this interface
 	public interface Frag3OSCSend {
-        public void onFrag3OSCSendInt(String OSCAddress, int argsOut);
+        void onFrag3OSCSendInt(String OSCAddress, int argsOut);
         //public void onFrag3OSCSendFloat(String OSCAddress, float argsOut);
         //public void onFrag3OSCSendString(String OSCAddress, String argsOut);
     }
@@ -100,82 +98,16 @@ public class Resolume3Fragment extends Fragment {
             bt_c[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(14);
-                    sb.append("track").append(i2).append("/connect");
-                    mCallbackOSCSend.onFrag3OSCSendInt(sb.toString(), 1);
+                    //StringBuilder sb = new StringBuilder(14);
+                    //sb.append("track").append(i2).append("/connect");
+                    String sb = "track" + i2 + "/connect";
+                    mCallbackOSCSend.onFrag3OSCSendInt(sb, 1);
                     Log.d("Bt", "bt_c");
                 }
             });
         }
 
-//	    bt_c_1 = (Button) view.findViewById(R.id.bt_c_1);
-//	    bt_c_2 = (Button) view.findViewById(R.id.bt_c_2);
-//	    bt_c_3 = (Button) view.findViewById(R.id.bt_c_3);
-//	    bt_c_4 = (Button) view.findViewById(R.id.bt_c_4);
-//	    bt_c_5 = (Button) view.findViewById(R.id.bt_c_5);
-//	    bt_c_6 = (Button) view.findViewById(R.id.bt_c_6);
-//	    bt_c_7 = (Button) view.findViewById(R.id.bt_c_7);
-//	    bt_c_8 = (Button) view.findViewById(R.id.bt_c_8);
-	    
-//	    bt_c_1.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track1/connect", 1);
-//				Log.d("Bt", "bt_c_1");
-//				}
-//		});
-//	    bt_c_2.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track2/connect", 1);
-//				Log.d("Bt", "bt_c_2");
-//				}
-//		});
-//	    bt_c_3.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track3/connect", 1);
-//				Log.d("Bt", "bt_c_3");
-//				}
-//		});
-//	    bt_c_4.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track4/connect", 1);
-//				Log.d("Bt", "bt_c_4");
-//				}
-//		});
-//	    bt_c_5.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track5/connect", 1);
-//				Log.d("Bt", "bt_c_5");
-//				}
-//		});
-//	    bt_c_6.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track6/connect", 1);
-//				Log.d("Bt", "bt_c_6");
-//				}
-//		});
-//	    bt_c_7.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track7/connect", 1);
-//				Log.d("Bt", "bt_c_7");
-//				}
-//		});
-//	    bt_c_8.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("track8/connect", 1);
-//				Log.d("Bt", "bt_c_8");
-//				}
-//		});
-
 	    Log.d("Bt", "Resolume3Fragment | onCreateView | setupBt_c setup");
-		//return;
 	}
 	
 	void setupBt_l4() {
@@ -195,82 +127,14 @@ public class Resolume3Fragment extends Fragment {
             bt_l4[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(20);
-                    sb.append("layer4/clip").append(i2).append("/connect");
-                    mCallbackOSCSend.onFrag3OSCSendInt(sb.toString(), 1);
+                    String sb = "layer4/clip" + i2 + "/connect";
+                    mCallbackOSCSend.onFrag3OSCSendInt(sb, 1);
                     Log.d("Bt", "bt_l4");
                 }
             });
         }
 
-//	    bt_l4_1 = (Button) view.findViewById(R.id.bt_l4_1);	//not 14.. but 'L' 4
-//	    bt_l4_2 = (Button) view.findViewById(R.id.bt_l4_2);
-//	    bt_l4_3 = (Button) view.findViewById(R.id.bt_l4_3);
-//	    bt_l4_4 = (Button) view.findViewById(R.id.bt_l4_4);
-//	    bt_l4_5 = (Button) view.findViewById(R.id.bt_l4_5);
-//	    bt_l4_6 = (Button) view.findViewById(R.id.bt_l4_6);
-//	    bt_l4_7 = (Button) view.findViewById(R.id.bt_l4_7);
-//	    bt_l4_8 = (Button) view.findViewById(R.id.bt_l4_8);
-	    
-//	    bt_l4_1.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip1/connect", 1);
-//				Log.d("Bt", "bt_l4_1");
-//				}
-//		});
-//	    bt_l4_2.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip2/connect", 1);
-//				Log.d("Bt", "bt_l4_2");
-//				}
-//		});
-//	    bt_l4_3.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip3/connect", 1);
-//				Log.d("Bt", "bt_l4_3");
-//				}
-//		});
-//	    bt_l4_4.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip4/connect", 1);
-//				Log.d("Bt", "bt_l4_4");
-//				}
-//		});
-//	    bt_l4_5.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip5/connect", 1);
-//				Log.d("Bt", "bt_l4_5");
-//				}
-//		});
-//	    bt_l4_6.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip6/connect", 1);
-//				Log.d("Bt", "bt_l4_6");
-//				}
-//		});
-//	    bt_l4_7.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip7/connect", 1);
-//				Log.d("Bt", "bt_l4_7");
-//				}
-//		});
-//	    bt_l4_8.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer4/clip8/connect", 1);
-//				Log.d("Bt", "bt_l4_8");
-//				}
-//		});
-
 	    Log.d("Bt", "Resolume3Fragment | onCreateView | setupBt_4 setup");
-		//return;
 	}
 	
 	void setupBt_l3() {
@@ -290,82 +154,14 @@ public class Resolume3Fragment extends Fragment {
             bt_l3[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(20);
-                    sb.append("layer3/clip").append(i2).append("/connect");
-                    mCallbackOSCSend.onFrag3OSCSendInt(sb.toString(), 1);
+                    String sb = "layer3/clip" + i2 + "/connect";
+                    mCallbackOSCSend.onFrag3OSCSendInt(sb, 1);
                     Log.d("Bt", "bt_l3");
                 }
             });
         }
 
-//	    bt_l3_1 = (Button) view.findViewById(R.id.bt_l3_1);
-//	    bt_l3_2 = (Button) view.findViewById(R.id.bt_l3_2);
-//	    bt_l3_3 = (Button) view.findViewById(R.id.bt_l3_3);
-//	    bt_l3_4 = (Button) view.findViewById(R.id.bt_l3_4);
-//	    bt_l3_5 = (Button) view.findViewById(R.id.bt_l3_5);
-//	    bt_l3_6 = (Button) view.findViewById(R.id.bt_l3_6);
-//	    bt_l3_7 = (Button) view.findViewById(R.id.bt_l3_7);
-//	    bt_l3_8 = (Button) view.findViewById(R.id.bt_l3_8);
-	    
-//	    bt_l3_1.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip1/connect", 1);
-//				Log.d("Bt", "bt_l3_1");
-//				}
-//		});
-//	    bt_l3_2.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip2/connect", 1);
-//				Log.d("Bt", "bt_l3_2");
-//				}
-//		});
-//	    bt_l3_3.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip3/connect", 1);
-//				Log.d("Bt", "bt_l3_3");
-//				}
-//		});
-//	    bt_l3_4.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip4/connect", 1);
-//				Log.d("Bt", "bt_l3_4");
-//				}
-//		});
-//	    bt_l3_5.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip5/connect", 1);
-//				Log.d("Bt", "bt_l3_5");
-//				}
-//		});
-//	    bt_l3_6.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip6/connect", 1);
-//				Log.d("Bt", "bt_l3_6");
-//				}
-//		});
-//	    bt_l3_7.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip7/connect", 1);
-//				Log.d("Bt", "bt_l3_7");
-//				}
-//		});
-//	    bt_l3_8.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer3/clip8/connect", 1);
-//				Log.d("Bt", "bt_l3_8");
-//				}
-//		});
-		
 	    Log.d("Bt", "Resolume3Fragment | onCreateView | setupBt_3 setup");
-		//return;
 	}
 	
 	void setupBt_l2() {
@@ -385,82 +181,14 @@ public class Resolume3Fragment extends Fragment {
             bt_l2[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(20);
-                    sb.append("layer2/clip").append(i2).append("/connect");
-                    mCallbackOSCSend.onFrag3OSCSendInt(sb.toString(), 1);
+                    String sb = "layer2/clip" + i2 + "/connect";
+                    mCallbackOSCSend.onFrag3OSCSendInt(sb, 1);
                     Log.d("Bt", "bt_l2");
                 }
             });
         }
 
-//	    bt_l2_1 = (Button) view.findViewById(R.id.bt_l2_1);
-//	    bt_l2_2 = (Button) view.findViewById(R.id.bt_l2_2);
-//	    bt_l2_3 = (Button) view.findViewById(R.id.bt_l2_3);
-//	    bt_l2_4 = (Button) view.findViewById(R.id.bt_l2_4);
-//	    bt_l2_5 = (Button) view.findViewById(R.id.bt_l2_5);
-//	    bt_l2_6 = (Button) view.findViewById(R.id.bt_l2_6);
-//	    bt_l2_7 = (Button) view.findViewById(R.id.bt_l2_7);
-//	    bt_l2_8 = (Button) view.findViewById(R.id.bt_l2_8);
-	    
-//	    bt_l2_1.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip1/connect", 1);
-//				Log.d("Bt", "bt_l2_1");
-//				}
-//		});
-//	    bt_l2_2.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip2/connect", 1);
-//				Log.d("Bt", "bt_l2_2");
-//				}
-//		});
-//	    bt_l2_3.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip3/connect", 1);
-//				Log.d("Bt", "bt_l2_3");
-//				}
-//		});
-//	    bt_l2_4.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip4/connect", 1);
-//				Log.d("Bt", "bt_l2_4");
-//				}
-//		});
-//	    bt_l2_5.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip5/connect", 1);
-//				Log.d("Bt", "bt_l2_5");
-//				}
-//		});
-//	    bt_l2_6.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip6/connect", 1);
-//				Log.d("Bt", "bt_l2_6");
-//				}
-//		});
-//	    bt_l2_7.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip7/connect", 1);
-//				Log.d("Bt", "bt_l2_7");
-//				}
-//		});
-//	    bt_l2_8.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer2/clip8/connect", 1);
-//				Log.d("Bt", "bt_l2_8");
-//				}
-//		});
-
 	    Log.d("Bt", "Resolume3Fragment | onCreateView | setupBt_2 setup");
-		//return;
 	}
 	
 	void setupBt_l1() {
@@ -480,89 +208,20 @@ public class Resolume3Fragment extends Fragment {
             bt_l1[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(20);
-                    sb.append("layer1/clip").append(i2).append("/connect");
-                    mCallbackOSCSend.onFrag3OSCSendInt(sb.toString(), 1);
+                    String sb = "layer1/clip" + i2 + "/connect";
+                    mCallbackOSCSend.onFrag3OSCSendInt(sb, 1);
                     Log.d("Bt", "bt_l1");
                 }
             });
         }
 
-//	    bt_l1_1 = (Button) view.findViewById(R.id.bt_l1_1);
-//	    bt_l1_2 = (Button) view.findViewById(R.id.bt_l1_2);
-//	    bt_l1_3 = (Button) view.findViewById(R.id.bt_l1_3);
-//	    bt_l1_4 = (Button) view.findViewById(R.id.bt_l1_4);
-//	    bt_l1_5 = (Button) view.findViewById(R.id.bt_l1_5);
-//	    bt_l1_6 = (Button) view.findViewById(R.id.bt_l1_6);
-//	    bt_l1_7 = (Button) view.findViewById(R.id.bt_l1_7);
-//	    bt_l1_8 = (Button) view.findViewById(R.id.bt_l1_8);
-
-//	    bt_l1_1.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip1/connect", 1);
-//				Log.d("Bt", "bt_l1_1");
-//				}
-//		});
-//	    bt_l1_2.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip2/connect", 1);
-//				Log.d("Bt", "bt_l1_2");
-//				}
-//		});
-//	    bt_l1_3.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip3/connect", 1);
-//				Log.d("Bt", "bt_l1_3");
-//				}
-//		});
-//	    bt_l1_4.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip4/connect", 1);
-//				Log.d("Bt", "bt_l1_4");
-//				}
-//		});
-//	    bt_l1_5.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip5/connect", 1);
-//				Log.d("Bt", "bt_l1_5");
-//				}
-//		});
-//	    bt_l1_6.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip6/connect", 1);
-//				Log.d("Bt", "bt_l1_6");
-//				}
-//		});
-//	    bt_l1_7.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip7/connect", 1);
-//				Log.d("Bt", "bt_l1_7");
-//				}
-//		});
-//	    bt_l1_8.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag3OSCSendInt("layer1/clip8/connect", 1);
-//				Log.d("Bt", "bt_l1_8");
-//				}
-//		});
-
 	    Log.d("Bt", "Resolume3Fragment | onCreateView | setupBt_1 setup");
-        //return;
     }
 
     @Override
     public void onResume() {
         super.onResume();
 		Log.d("HowFar", "Resolume3Fragment | onResume");
-		//getSavedState();
 	}
 	
 	@Override
@@ -570,11 +229,5 @@ public class Resolume3Fragment extends Fragment {
 		super.onPause();
 		Log.d("HowFar", "Resolume3Fragment | onPause");
 	}
-
-//	private void getSavedState() {
-//		appSettings = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
-//
-//		Log.d("HowFar", "Resolume3Fragment | getSavedState");
-//	}
 
 }

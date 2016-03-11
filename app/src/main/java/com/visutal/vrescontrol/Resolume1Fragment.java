@@ -1,14 +1,11 @@
 package com.visutal.vrescontrol;
 
-//import com.actionbarsherlock.app.SherlockFragment;
 import android.app.Dialog;
 import android.support.v4.app.Fragment;
 import com.visutal.utils.DoneOnEditorActionListener;
 import com.visutal.utils.Utils;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -18,19 +15,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 
 public class Resolume1Fragment extends Fragment {
-	
-	private boolean LOCAL_DEBUG = Settings.LOCAL_DEBUG;
-	
+
 	SharedPreferences appSettings;
     private Dialog dialog;
     static View view;
@@ -93,14 +86,12 @@ public class Resolume1Fragment extends Fragment {
 	public static boolean bt_beatloop_5Flip = false;
 	public static boolean bt_beatloop_6Flip = false;
 	public static boolean bt_beatloop_7Flip = false;
-    
-	//private static ToggleButton bt_bypassed;
+
 	private static Button bt_bypassed;
 	public static boolean bt_bypassedFlip = false;
 	private static boolean bt_bypassedLock = false;
 	public boolean confirmX = false;
 	private Button bt_disconnectall;
-	//private static ToggleButton bt_paused;
 	private static Button bt_paused;
 	public static boolean bt_pausedFlip = false;
 	private static boolean bt_pausedLock = false;
@@ -125,9 +116,9 @@ public class Resolume1Fragment extends Fragment {
 
     // Container Activity must implement this interface
 	public interface Frag1OSCSend {
-        public void onFrag1OSCSendInt(String OSCAddress, int argsOut);
-        public void onFrag1OSCSendFloat(String OSCAddress, float argsOut);
-        public void onFrag1OSCSendString(String OSCAddress, String argsOut);
+        void onFrag1OSCSendInt(String OSCAddress, int argsOut);
+        void onFrag1OSCSendFloat(String OSCAddress, float argsOut);
+        //public void onFrag1OSCSendString(String OSCAddress, String argsOut);
     }
 
     @Override
@@ -180,7 +171,6 @@ public class Resolume1Fragment extends Fragment {
 	    setupTransportBt();
 	    
 	    Log.d("Bt", "Resolume1Fragment | onCreateView | all bts' set..");
-		// END ...buttons....
 
 		hiddenForFocus1.requestFocus();
 		
@@ -232,7 +222,6 @@ public class Resolume1Fragment extends Fragment {
         });
 		
 		Log.d("Bt", "Resolume1Fragment | onCreateView | setupLayerBt setup");
-		return;
 	}
 	
 	void setupCompDirBt() {
@@ -271,7 +260,6 @@ public class Resolume1Fragment extends Fragment {
         });
 
 		Log.d("Bt", "Resolume1Fragment | onCreateView | setupCompDirBt setup");
-		return;
 	}
 	
 	void setupJumpToPoiBt() {
@@ -335,7 +323,6 @@ public class Resolume1Fragment extends Fragment {
 		});
 
 		Log.d("Bt", "Resolume1Fragment | onCreateView | setupJumpToPoiBt setup");
-		return;
 	}
 	
 	void setupBeatLoopBt() {
@@ -433,7 +420,6 @@ public class Resolume1Fragment extends Fragment {
 		});
 
 		Log.d("Bt", "Resolume1Fragment | onCreateView | setupBeatLoopBt setup");
-		return;
 	}
 	
 	void setupTransportBt() {
@@ -446,7 +432,6 @@ public class Resolume1Fragment extends Fragment {
 		bt_opacityandvolume_up = (Button) view.findViewById(R.id.bt_opacityandvolume_up);
 		editText_bpm = (EditText) view.findViewById(R.id.editText_bpm);
 		bt_tap = (Button) view.findViewById(R.id.bt_tap);
-
 
         bt_bypassed.setOnClickListener(new OnClickListener() {
             @Override
@@ -511,7 +496,6 @@ public class Resolume1Fragment extends Fragment {
                                                                     if (fromUser) {
                                                                         float progress_opacityandvolume = Utils.ConvertRange(0, 100, 0, 1, progress);
                                                                         mCallbackOSCSend.onFrag1OSCSendFloat("composition/opacityandvolume", progress_opacityandvolume);
-                                                                        //runOSCSendFloat("composition/opacityandvolume", progress_opacityandvolume);
                                                                         progress_opacityandvolumeInt = progress;
                                                                         Log.d("Stats", "SeekBar | progress_opacityandvolumeInt " + String.valueOf(progress));
                                                                     }
@@ -578,7 +562,6 @@ public class Resolume1Fragment extends Fragment {
 		});
 
 		Log.d("Bt", "Resolume1Fragment | onCreateView | setupTransportBt setup");
-		return;
 	}
 	
 	@Override
@@ -722,9 +705,9 @@ public class Resolume1Fragment extends Fragment {
 	}
 
 	public static void updateOSCbpm(double argbpm) {
-		double bpmOldValue = argbpm;
-		Log.d("HowFar", "OSCListen bpmOldValue - (Double) " + bpmOldValue);
-		bpmInDouble = Utils.ConvertBpmIn(bpmOldValue);
+		//double bpmOldValue = argbpm;
+		Log.d("HowFar", "OSCListen bpmOldValue - (Double) " + argbpm);
+		bpmInDouble = Utils.ConvertBpmIn(argbpm);
 		editText_bpm.post(new Runnable() {
 			public void run() {
 				editText_bpm.setText(String.valueOf(bpmInDouble));
@@ -749,8 +732,6 @@ public class Resolume1Fragment extends Fragment {
 		if (index != currentLayer) {swapBtBeatLoop(0);}
 		
 		prevLayer = currentLayer;
-		//if (index != 5) {currentLayer = index;}
-		//else {currentLayer = 0;}
 		currentLayer = index;
 		
 		if (index == 0) {
@@ -777,7 +758,6 @@ public class Resolume1Fragment extends Fragment {
 		
 		if (index == 0 | index == 5) {compDirOSCadrPrt = "composition";} 
 		else {compDirOSCadrPrt = "layer"+index+"/video/position";}		// + /direction
-		
 
 		if (prevLayer == 0 && index != 5) {bt_comp.setBackgroundResource(orange_off); bt_compFlip = false;}
 		if (prevLayer == 1) {bt_layer1.setBackgroundResource(orange_off); bt_layer1Flip = false;}
@@ -785,8 +765,6 @@ public class Resolume1Fragment extends Fragment {
 		if (prevLayer == 3) {bt_layer3.setBackgroundResource(orange_off); bt_layer3Flip = false;}
 		if (prevLayer == 4) {bt_layer4.setBackgroundResource(orange_off); bt_layer4Flip = false;}
 		if (prevLayer == 5 && index != 0) {bt_comp.setBackgroundResource(orange_off); bt_compFlip = false;}
-		
-		return;
 	}
 	
 	public static void swapBtBeatLoop(int index) {
@@ -833,8 +811,6 @@ public class Resolume1Fragment extends Fragment {
 		if (prevBeatloop == 5) {bt_beatloop_5.setBackgroundResource(blue_off); bt_beatloop_5Flip = false;}
 		if (prevBeatloop == 6) {bt_beatloop_6.setBackgroundResource(blue_off); bt_beatloop_6Flip = false;}
 		if (prevBeatloop == 7) {bt_beatloop_7.setBackgroundResource(blue_off); bt_beatloop_7Flip = false;}
-		
-		return;
 	}
 	
 	private void getSavedState() {
@@ -891,14 +867,12 @@ public class Resolume1Fragment extends Fragment {
 		if (currentBeatloop == 5) {bt_beatloop_5.setBackgroundResource(blue_on); bt_beatloop_5Flip = true;}
 		if (currentBeatloop == 6) {bt_beatloop_6.setBackgroundResource(blue_on); bt_beatloop_6Flip = true;}
 		if (currentBeatloop == 7) {bt_beatloop_7.setBackgroundResource(blue_on); bt_beatloop_7Flip = true;}
-		
-		//bt_bypassed.setChecked(bt_bypassedFlip);
+
 		if (bt_bypassedFlip) {
 			bt_bypassed.setBackgroundResource(orange_on);
 		} else {
 			bt_bypassed.setBackgroundResource(orange_off);
 		}
-		//bt_paused.setChecked(bt_pausedFlip);
 		if (bt_pausedFlip) {
 			bt_bypassed.setBackgroundResource(orange_on);
 		} else {
@@ -909,43 +883,10 @@ public class Resolume1Fragment extends Fragment {
 		editText_bpm.setText(String.valueOf(bpmInDouble));
 		
 		Log.d("HowFar", "Resolume1Fragment | setState");
-		return;
 	}
 	
 	private void setSavedState() {
 		// as all bts are triggered by bounce-back from resolume, this should not be needed
-//		appSettings = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
-//
-//		Editor editor = appSettings.edit();
-//
-//		editor.putInt("prevLayer", prevLayer);
-//		editor.putInt("currentLayer", currentLayer);
-//		editor.putBoolean("bt_compFlip", bt_compFlip);
-//		editor.putBoolean("bt_layer1Flip", bt_layer1Flip);
-//		editor.putBoolean("bt_layer2Flip", bt_layer2Flip);
-//		editor.putBoolean("bt_layer3Flip", bt_layer3Flip);
-//		editor.putBoolean("bt_layer4Flip", bt_layer4Flip);
-//
-//		editor.putInt("prevBeatloop", prevBeatloop);
-//		editor.putInt("currentBeatloop", currentBeatloop);
-//		editor.putBoolean("bt_beatloop_1Flip", bt_beatloop_1Flip);
-//		editor.putBoolean("bt_beatloop_2Flip", bt_beatloop_2Flip);
-//		editor.putBoolean("bt_beatloop_3Flip", bt_beatloop_3Flip);
-//		editor.putBoolean("bt_beatloop_4Flip", bt_beatloop_4Flip);
-//		editor.putBoolean("bt_beatloop_5Flip", bt_beatloop_5Flip);
-//		editor.putBoolean("bt_beatloop_6Flip", bt_beatloop_6Flip);
-//		editor.putBoolean("bt_beatloop_7Flip", bt_beatloop_7Flip);
-//
-//			//editor.putDouble("editText_bpm", bpmInDouble);
-//			//float bpmFloat2 = (float) (bpmFloat*1000);
-//			//editor.putFloat("bpmFloat", bpmFloat2);
-//			//Log.d("HowFar", "Resolume1Fragment | setSavedState | putFloat bpmFloat " + bpmFloat2);
-//		editor.putBoolean("bt_pausedFlip", bt_pausedFlip);
-//		editor.putBoolean("bt_bypassedFlip", bt_bypassedFlip);
-//		editor.putInt("progress_opacityandvolumeInt", progress_opacityandvolumeInt);
-//
-// 		editor.commit();
- 		
 		Log.d("HowFar", "Resolume1Fragment | setSavedState");
 	}
 	

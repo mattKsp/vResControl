@@ -4,12 +4,12 @@
         "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\ic_bt_top.xml"
     },
     {
-        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_tabsettings1.xml",
-        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_tabsettings1.xml"
-    },
-    {
         "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_tabsettings1.xml",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\src\\main\\res\\drawable\\shape_tabsettings1.xml"
     },
     {
         "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_bt_green_nostroke.xml",

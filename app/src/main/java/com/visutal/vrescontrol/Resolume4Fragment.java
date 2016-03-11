@@ -3,9 +3,7 @@ package com.visutal.vrescontrol;
 import android.support.v4.app.Fragment;
 import com.visutal.utils.Utils;
 import com.visutal.utils.VerticalSeekBar;
-
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -17,12 +15,8 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
-
 public class Resolume4Fragment extends Fragment {
-	
-	private boolean LOCAL_DEBUG = Settings.LOCAL_DEBUG;
 
-	//SharedPreferences appSettings;
     View view;
 
     public static Button[] verticalSeekbar_fx_up = new Button[8];                   // up button
@@ -36,8 +30,8 @@ public class Resolume4Fragment extends Fragment {
 
     // Container Activity must implement this interface
 	public interface Frag4OSCSend {
-        public void onFrag4OSCSendInt(String OSCAddress, int argsOut);
-        public void onFrag4OSCSendFloat(String OSCAddress, float argsOut);
+        void onFrag4OSCSendInt(String OSCAddress, int argsOut);
+        void onFrag4OSCSendFloat(String OSCAddress, float argsOut);
         //public void onFrag4OSCSendString(String OSCAddress, String argsOut);
     }
 
@@ -109,14 +103,13 @@ public class Resolume4Fragment extends Fragment {
             verticalSeekbar_fx_up[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(32);
-                    sb.append(CcSet.i().data4.fxSliderOSCSendObjPrt1).append(i2).append(CcSet.i().data4.fxSliderOSCSendObjPrt2);
-                    mCallbackOSCSend.onFrag4OSCSendFloat(sb.toString(), 1);
+                    String sb = CcSet.i().data4.fxSliderOSCSendObjPrt1 + i2 + CcSet.i().data4.fxSliderOSCSendObjPrt2;
+                    mCallbackOSCSend.onFrag4OSCSendFloat(sb, 1);
                 }
             });
         }
+
 	    Log.d("HowFar", "Resolume4Fragment | onCreateView | setupVerticalSeekbar_fx_up setup");
-		//return;
 	}
 	
     void setupVerticalSeekbar_fx() {
@@ -169,9 +162,8 @@ public class Resolume4Fragment extends Fragment {
                        if (fromUser) {
                            Log.d("HowFar", "Resolume4Fragment | verticalSeekbar_fx | onProgressChanged | fromUser");
                            float progress1b = Utils.ConvertRange(0, 100, 0, 1, progress1);
-                           StringBuilder sb = new StringBuilder(32);
-                           sb.append(CcSet.i().data4.fxSliderOSCSendObjPrt1).append(i2).append(CcSet.i().data4.fxSliderOSCSendObjPrt2);
-                           mCallbackOSCSend.onFrag4OSCSendFloat(sb.toString(), progress1b);
+                           String sb = CcSet.i().data4.fxSliderOSCSendObjPrt1 + i2 + CcSet.i().data4.fxSliderOSCSendObjPrt2;
+                           mCallbackOSCSend.onFrag4OSCSendFloat(sb, progress1b);
                            //if (skdbu1) {seekBar.setSecondaryProgress(progress1);}
                            Log.d("OSC", "Resolume4Fragment composition/link1/values " + Float.toString(progress1b));
                        }
@@ -207,14 +199,13 @@ public class Resolume4Fragment extends Fragment {
             verticalSeekbar_fx_down[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    StringBuilder sb = new StringBuilder(32);
-                    sb.append(CcSet.i().data4.fxSliderOSCSendObjPrt1).append(i2).append(CcSet.i().data4.fxSliderOSCSendObjPrt2);
-                    mCallbackOSCSend.onFrag4OSCSendFloat(sb.toString(), 0);
+                    String sb = CcSet.i().data4.fxSliderOSCSendObjPrt1 + i2 + CcSet.i().data4.fxSliderOSCSendObjPrt2;
+                    mCallbackOSCSend.onFrag4OSCSendFloat(sb, 0);
                 }
             });
         }
+
 	    Log.d("HowFar", "Resolume4Fragment | onCreateView | setupVerticalSeekbar_fx_down setup");
-		//return;
 	}
 	
 	void setupVerticalSeekbar_fx_b() {
@@ -235,7 +226,6 @@ public class Resolume4Fragment extends Fragment {
             bt_fx_b[i].setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //String OSCAddress = "composition/video/effect1/bypassed";
                     StringBuilder OSCAddress = new StringBuilder(34);
                     OSCAddress.append("composition/video/effect").append(i2).append("/bypassed");
                     if (CcSet.i().data4.bt_fx_b_flip[ii]) {
@@ -246,8 +236,8 @@ public class Resolume4Fragment extends Fragment {
                 }
             });
         }
+
 	    Log.d("HowFar", "Resolume4Fragment | onCreateView | setupVerticalSeekbar_fx_b setup");
-		//return;
 	}
 
 	@Override
@@ -270,7 +260,6 @@ public class Resolume4Fragment extends Fragment {
     public static void updateOSCverticalSeekbarFx(final int pos, final int arg) {
         if (!verticalSeekbar_fx_inUse[pos]) {
             Log.d("HowFar", "Resolume4Fragment | updateOSCverticalSeekbarFx !verticalSeekbar_fx_inUse - " + pos);
-            //final int verticalSeekBarFx1ProgIn = Utils.ConvertRange(0, 1, 0, 100, args);
             verticalSeekbar_fx[pos].post(new Runnable() {
                 public void run() {
                     verticalSeekbar_fx[pos].setProgressAndThumbIn(arg);
@@ -297,7 +286,6 @@ public class Resolume4Fragment extends Fragment {
 	private void getSavedState() {
         CcSet.i().loadData4(PreferenceManager.getDefaultSharedPreferences(this.getActivity()));
 		Log.d("HowFar", "Resolume4Fragment | getSavedState");
-		//return;
 	}
 	
 	void setSlidersMode() {
@@ -309,7 +297,6 @@ public class Resolume4Fragment extends Fragment {
             CcSet.i().data4.fxSliderOSCSendObjPrt1 = CcSet.i().data4.sliderOSCSend1;
             CcSet.i().data4.fxSliderOSCSendObjPrt2 = CcSet.i().data4.sliderOSCSend1b;
 	    }
-		//return;
 	}
 	
 	private void setState() {
@@ -330,32 +317,22 @@ public class Resolume4Fragment extends Fragment {
 
         if (CcSet.i().data4.fxSlidersModeInt == 0) {
             for (int i = 0; i < 8; i++) {
-                //CcSet.i().data4.verticalSeekbar_fxProgress[i] = CcSet.i().data4.verticalSeekbar_fxProgress_link[i];
                 verticalSeekbar_fx[i].setSecondaryProgress(CcSet.i().data4.verticalSeekbar_fxProgress_link[i]);
                 verticalSeekbar_fx[i].setProgressAndThumb(CcSet.i().data4.verticalSeekbar_fxProgress_link[i]);
             }
 	    } else {
             for (int i = 0; i < 8; i++) {
-                //CcSet.i().data4.verticalSeekbar_fxProgress[i] = CcSet.i().data4.verticalSeekbar_fxProgress_opacity[i];
                 verticalSeekbar_fx[i].setSecondaryProgress(CcSet.i().data4.verticalSeekbar_fxProgress_opacity[i]);
                 verticalSeekbar_fx[i].setProgressAndThumb(CcSet.i().data4.verticalSeekbar_fxProgress_opacity[i]);
             }
 	    }
 
-//        for (int i = 0; i < 8; i++) {
-//            verticalSeekbar_fx[i].setSecondaryProgress(CcSet.i().data4.verticalSeekbar_fxProgress[i]);
-//            verticalSeekbar_fx[i].setProgressAndThumb(CcSet.i().data4.verticalSeekbar_fxProgress[i]);
-//        }
-
 	    Log.d("HowFar", "Resolume4Fragment | setState");
-		//return;
 	}
 	
 	private void setSavedState() {
-		//appSettings = PreferenceManager.getDefaultSharedPreferences(this.getActivity());		// ?
         CcSet.i().saveData4(PreferenceManager.getDefaultSharedPreferences(this.getActivity()));   // this may be redundant here
 		Log.d("HowFar", "Resolume4Fragment | setSavedState");
-		//return;
 	}
 	
 }

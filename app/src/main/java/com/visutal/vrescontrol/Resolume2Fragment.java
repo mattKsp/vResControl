@@ -1,10 +1,8 @@
 package com.visutal.vrescontrol;
 
-//import com.actionbarsherlock.app.SherlockFragment;
 import android.support.v4.app.Fragment;
 import com.visutal.utils.Utils;
 import com.visutal.utils.VerticalSeekBar;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,13 +14,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 public class Resolume2Fragment extends Fragment {
-	
-	private boolean LOCAL_DEBUG = Settings.LOCAL_DEBUG;
 
     View view;
 
@@ -43,9 +38,7 @@ public class Resolume2Fragment extends Fragment {
     private static Button[] bt_s = new Button[4];
     private static TextView[] bt_ab = new TextView[4];
     private static boolean[] verticalSeekbar_inUse = new boolean[4];
-    //private static int[] verticalSeekbarProgress = new int[4];    // switch between audio/av/video
     private static int[] verticalSeekbarProgress2 = new int[4];
-    private static int[] verticalSeekbarProgressOpacity = new int[4];   // hmm... ???
     private static Button bt_centerTheSeekBar5;
     private static Button bt_seekBar_a;
     private static SeekBar seekBar5;
@@ -59,9 +52,9 @@ public class Resolume2Fragment extends Fragment {
 
     // Container Activity must implement this interface
 	public interface Frag2OSCSend {
-        public void onFrag2OSCSendInt(String OSCAddress, int argsOut);
-        public void onFrag2OSCSendFloat(String OSCAddress, float argsOut);
-        public void onFrag2OSCSendString(String OSCAddress, String argsOut);
+        void onFrag2OSCSendInt(String OSCAddress, int argsOut);
+        void onFrag2OSCSendFloat(String OSCAddress, float argsOut);
+        //public void onFrag2OSCSendString(String OSCAddress, String argsOut);
     }
 
     @Override
@@ -115,14 +108,7 @@ public class Resolume2Fragment extends Fragment {
         setupLayer(1);
         setupLayer(2);
         setupLayer(3);
-//	    setupLayer1();
-//	    setupLayer2();
-//	    setupLayer3();
-//	    setupLayer4();
 	    setupCrossbar();
-
-	    //setSlidersMode();		// think this might need redoing as might need to come between declare and setuponclick
-        Log.d("Bt", "Resolume2Fragment | onCreateView | all bts' set..");
 
         Log.d("Bt", "Resolume2Fragment | onCreateView setup");
 	    return view;
@@ -167,25 +153,20 @@ public class Resolume2Fragment extends Fragment {
     }
 
     private void setupLayer(final int i) {
-        StringBuilder sb0 = new StringBuilder(7);
-        sb0.append("layer").append(i).append("/");
-        String s_layer = sb0.toString();
+        String sb0 = "layer" + i + "/";
+        String s_layer = sb0;
 
-        StringBuilder sb1 = new StringBuilder(32);
-        sb1.append(s_layer).append(sliderOSCSendObjPrt);
-        final String s_seek = sb1.toString();
+        String sb1 = s_layer + sliderOSCSendObjPrt;
+        final String s_seek = sb1;
 
-        StringBuilder sb2 = new StringBuilder(15);
-        sb2.append(s_layer).append("bypassed");
-        final String s_bypass = sb2.toString();
+        String sb2 = s_layer + "bypassed";
+        final String s_bypass = sb2;
 
-        StringBuilder sb3 = new StringBuilder(11);
-        sb3.append(s_layer).append("solo");
-        final String s_solo = sb3.toString();
+        String sb3 = s_layer + "solo";
+        final String s_solo = sb3;
 
-        StringBuilder sb4 = new StringBuilder(12);
-        sb4.append(s_layer).append("clear");
-        final String s_clear = sb4.toString();
+        String sb4 = s_layer + "clear";
+        final String s_clear = sb4;
 
         verticalSeekbar_up[i] = (Button) view.findViewById(viewID_verticalSeekBar_up[i]);
         verticalSeekbar[i] = (VerticalSeekBar) view.findViewById(viewID_verticalSeekBar[i]);
@@ -404,544 +385,11 @@ public class Resolume2Fragment extends Fragment {
         Log.d("Bt", "Resolume2Fragment | onCreateView | setupLayer setup " + i);
     }
 
-//    void setupLayer1() {
-//	    verticalSeekbar1 = (VerticalSeekBar) view.findViewById(R.id.verticalSeekbar1);
-//        verticalSeekbar1_up = (Button) view.findViewById(R.id.verticalSeekbar1_up);
-//	    verticalSeekbar1_down = (Button) view.findViewById(R.id.verticalSeekbar1_down);
-//		//bt_1_b = (ToggleButton) view.findViewById(R.id.bt_1_b);
-//		//bt_1_s = (ToggleButton) view.findViewById(R.id.bt_1_s);
-//		bt_1_b = (Button) view.findViewById(R.id.bt_1_b);
-//		bt_1_s = (Button) view.findViewById(R.id.bt_1_s);
-//	    bt_1_x = (Button) view.findViewById(R.id.bt_1_x);
-//        bt_1_ab = (TextView) view.findViewById(R.id.bt_1_ab);
-//
-//   		verticalSeekbar1_up.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer1/" + sliderOSCSendObjPrt, 1);
-//   				verticalSeekbar1Progress = 100;
-//   				verticalSeekbar1Progress2 = verticalSeekbar1Progress;
-//   				verticalSeekbar1.setSecondaryProgress(verticalSeekbar1Progress2);
-//   				verticalSeekbar1.setProgressAndThumb(verticalSeekbar1Progress);
-//   				Log.d("Bt", "verticalSeekbar1_up" + String.valueOf(verticalSeekbar1Progress));
-//   			}
-//   		});
-//        verticalSeekbar1.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-//   			@Override
-//   			public void onStopTrackingTouch(SeekBar seekBar1) {
-//   				verticalSeekbar1_inUse = false;
-//   				skdbu1 = false;
-//   				seekBar1.setSecondaryProgress(verticalSeekbar1Progress);
-//   				verticalSeekbar1Progress2 = verticalSeekbar1Progress;
-//   				Log.d("OSC", "Resolume2Fragment seekBar1 | onStopTrackingTouch");
-//   			}
-//   			@Override
-//   			public void onStartTrackingTouch(SeekBar seekBar1) {
-//   				verticalSeekbar1_inUse = true;
-//   				if (verticalSeekbar1Progress == 0) {skdbu1 = true;}
-//   				seekBar1.setSecondaryProgress(verticalSeekbar1Progress);
-//   				verticalSeekbar1Progress2 = verticalSeekbar1Progress;
-//   				Log.d("OSC", "Resolume2Fragment seekBar1 | onStartTrackingTouch");
-//   			}
-//   			@Override
-//   			public void onProgressChanged(SeekBar seekBar1, int progress1, boolean fromUser) {
-//   				Log.d("OSC", "Resolume2Fragment verticalSeekbar1 | onProgressChanged | progress = " + String.valueOf(progress1));
-//   				if (verticalSeekbar1_inUse) {
-//		   			if (fromUser) {
-//		   				float progress1b = Utils.ConvertRange(0, 100, 0, 1, progress1);
-//		   				mCallbackOSCSend.onFrag2OSCSendFloat("layer1/" + sliderOSCSendObjPrt, progress1b);
-//		   				//runOSCSendFloat("layer1/" + sliderOSCSendObjPrt, progress1b);
-//
-//		   				if (skdbu1) {seekBar1.setSecondaryProgress(progress1);}
-//
-//		   				Log.d("OSC", "Resolume2Fragment verticalSeekbar1 | onProgressChanged | fromUser");
-//		   				Log.d("OSC", "Resolume2Fragment verticalSeekbar1 | onProgressChanged | verticalSeekbar1Progress = " + String.valueOf(progress1));
-//		   				Log.d("OSC", "Resolume2Fragment layer1/video/opacity/values " + Float.toString(progress1b));
-//		   			} else {
-//		   				Log.d("OSC", "Resolume2Fragment verticalSeekbar1 | onProgressChanged | !fromUser");
-//		   			}
-//   				}
-//   				verticalSeekbar1Progress = progress1;
-//   			}
-//   		}
-//   		);
-//   		verticalSeekbar1_down.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer1/" + sliderOSCSendObjPrt, 0);
-//   				verticalSeekbar1Progress = 0;
-//   				verticalSeekbar1Progress2 = verticalSeekbar1Progress;
-//   				verticalSeekbar1.setSecondaryProgress(verticalSeekbar1Progress2);
-//   				verticalSeekbar1.setProgressAndThumb(verticalSeekbar1Progress);
-//   				Log.d("Bt", "verticalSeekbar1_down" + String.valueOf(verticalSeekbar1Progress));
-//   			}
-//   		});
-////        bt_1_b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-////   			@Override
-////   			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-////   				if (!bt_1_bLock) {
-////	   				String OSCAddress = "layer1/bypassed";
-////	   				if (isChecked) {
-////	   	   				mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-////	   					Log.d("Bt", "bt_1_b enabled");
-////	   				}
-////	   				else {
-////	   	   				mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-////	   					Log.d("Bt", "bt_1_b disabled");
-////	   				}
-////   				}
-////   			}
-////   		});
-////        bt_1_s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-////   			@Override
-////   			public void onCheckedChanged(CompoundButton buttonView, boolean isCheckeds1) {
-////   				if (!bt_1_sLock) {
-////	   				String OSCAddress = "layer1/solo";
-////	   				if (isCheckeds1) {
-////	   	   				mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-////	   					Log.d("Bt", "bt_1_s enabled");
-////	   				}
-////	   				else {
-////	   	   				mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-////	   					Log.d("Bt", "bt_1_s disabled");
-////	   				}
-////   				}
-////   			}
-////   		});
-//		bt_1_b.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_1_bLock) {
-//					String OSCAddress = "layer1/bypassed";
-//					if (bt_1_bFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//		bt_1_s.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_1_sLock) {
-//					String OSCAddress = "layer1/solo";
-//					if (bt_1_sFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_1_x.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendInt("layer1/clear", 1);
-//   				Log.d("Bt", "bt_1_x");
-//   			}
-//   		});
-//        bt_1_ab.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				switch (bt_1_abState) {
-//   					case 0:
-//   						bt_1_ab.setBackgroundResource(R.drawable.shape_bt1_orange_left_nostroke);
-//   						bt_1_ab.setText("A");
-//   						bt_1_abState = 1;
-//   						break;
-//   					case 1:
-//   						bt_1_ab.setBackgroundResource(R.drawable.shape_bt1_orange_right_nostroke);
-//   						bt_1_ab.setText("B");
-//   						bt_1_abState = 2;
-//   						break;
-//   					case 2:
-//   						bt_1_ab.setBackgroundResource(R.drawable.shape_bt1_nostroke);
-//   						bt_1_ab.setText("A/B");
-//   						bt_1_abState = 0;
-//   						break;
-//   				}
-//   				Log.d("Bt", "bt_1_abState");
-//   			}
-//   		});
-//
-//		Log.d("Bt", "Resolume2Fragment | onCreateView | setupLayer1 setup");
-//		return;
-//	}
-//
-//	void setupLayer2() {
-//		verticalSeekbar2 = (VerticalSeekBar) view.findViewById(R.id.verticalSeekbar2);
-//	    verticalSeekbar2_up = (Button) view.findViewById(R.id.verticalSeekbar2_up);
-//	    verticalSeekbar2_down = (Button) view.findViewById(R.id.verticalSeekbar2_down);
-//	    bt_2_b = (ToggleButton) view.findViewById(R.id.bt_2_b);
-//	    bt_2_s = (ToggleButton) view.findViewById(R.id.bt_2_s);
-//	    bt_2_x = (Button) view.findViewById(R.id.bt_2_x);
-//        bt_2_ab = (TextView) view.findViewById(R.id.bt_2_ab);
-//
-//		verticalSeekbar2_up.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer2/" + sliderOSCSendObjPrt, 1);
-//				verticalSeekbar2Progress = 100;
-//				verticalSeekbar2Progress2 = verticalSeekbar2Progress;
-//				verticalSeekbar2.setSecondaryProgress(verticalSeekbar2Progress);
-//				verticalSeekbar2.setProgressAndThumb(verticalSeekbar2Progress);
-//				Log.d("Bt", "verticalSeekbar2_up");
-//			}
-//		});
-//        verticalSeekbar2.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-//			@Override
-//			public void onStopTrackingTouch(SeekBar seekBar2) {
-//				verticalSeekbar2_inUse = false;
-//				skdbu2 = false;
-//				seekBar2.setSecondaryProgress(seekBar2.getProgress());
-//				verticalSeekbar2Progress2 = verticalSeekbar2Progress;
-//			}
-//			@Override
-//			public void onStartTrackingTouch(SeekBar seekBar2) {
-//				verticalSeekbar2_inUse = true;
-//				if (verticalSeekbar2Progress == 0) {skdbu2 = true;}
-//				seekBar2.setSecondaryProgress(verticalSeekbar2Progress);
-//				verticalSeekbar2Progress2 = verticalSeekbar2Progress;
-//			}
-//			@Override
-//			public void onProgressChanged(SeekBar seekBar2, int progress2, boolean fromUser) {
-//				if (verticalSeekbar2_inUse) {
-//					if (fromUser) {
-//						float progress2b = Utils.ConvertRange(0, 100, 0, 1, progress2);
-//		   				mCallbackOSCSend.onFrag2OSCSendFloat("layer2/" + sliderOSCSendObjPrt, progress2b);
-//						if (skdbu2) {seekBar2.setSecondaryProgress(progress2);}
-//					}
-//				}
-//				verticalSeekbar2Progress = progress2;
-//			}
-//		}
-//		);
-//		verticalSeekbar2_down.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer2/" + sliderOSCSendObjPrt, 0);
-//				verticalSeekbar2Progress = 0;
-//				verticalSeekbar2Progress2 = verticalSeekbar2Progress;
-//				verticalSeekbar2.setProgressAndThumb(verticalSeekbar2Progress);
-//				verticalSeekbar2.setSecondaryProgress(verticalSeekbar2Progress);
-//				Log.d("Bt", "verticalSeekbar2_down");
-//			}
-//		});
-//        bt_2_b.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_2_bLock) {
-//					String OSCAddress = "layer2/bypassed";
-//					if (bt_2_bFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_2_s.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_2_sLock) {
-//					String OSCAddress = "layer2/solo";
-//					if (bt_2_sFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					}
-//					else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_2_x.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag2OSCSendInt("layer2/clear", 1);
-//				Log.d("Bt", "bt_2_x");
-//				}
-//		});
-//        bt_2_ab.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				switch (bt_2_abState) {
-//					case 0:
-//						bt_2_ab.setBackgroundResource(R.drawable.shape_bt1_orange_left_nostroke);
-//						bt_2_ab.setText("A");
-//						bt_2_abState = 1;
-//						break;
-//					case 1:
-//						bt_2_ab.setBackgroundResource(R.drawable.shape_bt1_orange_right_nostroke);
-//						bt_2_ab.setText("B");
-//						bt_2_abState = 2;
-//						break;
-//					case 2:
-//						bt_2_ab.setBackgroundResource(R.drawable.shape_bt1_nostroke);
-//						bt_2_ab.setText("A/B");
-//						bt_2_abState = 0;
-//						break;
-//				}
-//				Log.d("Bt", "bt_2_abState");
-//			}
-//		});
-//
-//		Log.d("Bt", "Resolume2Fragment | onCreateView | setupLayer2 setup");
-//		return;
-//	}
-//
-//	void setupLayer3() {
-//		verticalSeekbar3 = (VerticalSeekBar) view.findViewById(R.id.verticalSeekbar3);
-//	    verticalSeekbar3_up = (Button) view.findViewById(R.id.verticalSeekbar3_up);
-//	    verticalSeekbar3_down = (Button) view.findViewById(R.id.verticalSeekbar3_down);
-//	    bt_3_b = (ToggleButton) view.findViewById(R.id.bt_3_b);
-//	    bt_3_s = (ToggleButton) view.findViewById(R.id.bt_3_s);
-//	    bt_3_x = (Button) view.findViewById(R.id.bt_3_x);
-//        bt_3_ab = (TextView) view.findViewById(R.id.bt_3_ab);
-//
-//   		verticalSeekbar3_up.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer3/" + sliderOSCSendObjPrt, 1);
-//   				verticalSeekbar3Progress = 100;
-//   				verticalSeekbar3Progress2 = verticalSeekbar3Progress;
-//   				verticalSeekbar3.setSecondaryProgress(verticalSeekbar3Progress);
-//   				verticalSeekbar3.setProgressAndThumb(verticalSeekbar3Progress);
-//   				Log.d("Bt", "verticalSeekbar3_up");
-//   			}
-//   		});
-//        verticalSeekbar3.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-//   			@Override
-//   			public void onStopTrackingTouch(SeekBar seekBar3) {
-//   				verticalSeekbar3_inUse = false;
-//   				skdbu3 = false;
-//   				seekBar3.setSecondaryProgress(seekBar3.getProgress());
-//   				verticalSeekbar3Progress2 = verticalSeekbar3Progress;
-//   			}
-//   			@Override
-//   			public void onStartTrackingTouch(SeekBar seekBar3) {
-//   				verticalSeekbar3_inUse = true;
-//   				if (verticalSeekbar3Progress == 0) {skdbu3 = true;}
-//   				seekBar3.setSecondaryProgress(verticalSeekbar3Progress);
-//   				verticalSeekbar3Progress2 = verticalSeekbar3Progress;
-//   			}
-//   			@Override
-//   			public void onProgressChanged(SeekBar seekBar3, int progress3, boolean fromUser) {
-//   				if (verticalSeekbar3_inUse) {
-//		   			if (fromUser) {
-//		   				float progress3b = Utils.ConvertRange(0, 100, 0, 1, progress3);
-//		   				mCallbackOSCSend.onFrag2OSCSendFloat("layer3/" + sliderOSCSendObjPrt, progress3b);
-//		   				if (skdbu3) {seekBar3.setSecondaryProgress(progress3);}
-//		   			}
-//   				}
-//   				verticalSeekbar3Progress = progress3;
-//   			}
-//   		}
-//   		);
-//   		verticalSeekbar3_down.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer3/" + sliderOSCSendObjPrt, 0);
-//   				verticalSeekbar3Progress = 0;
-//   				verticalSeekbar3Progress2 = verticalSeekbar3Progress;
-//   				verticalSeekbar3.setSecondaryProgress(verticalSeekbar3Progress);
-//   				verticalSeekbar3.setProgressAndThumb(verticalSeekbar3Progress);
-//   				Log.d("Bt", "verticalSeekbar3_down");
-//   			}
-//   		});
-//        bt_3_b.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_3_bLock) {
-//					String OSCAddress = "layer3/bypassed";
-//					if (bt_3_bFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_3_s.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_3_sLock) {
-//					String OSCAddress = "layer3/solo";
-//					if (bt_3_sFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_3_x.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag2OSCSendInt("layer3/clear", 1);
-//   				Log.d("Bt", "bt_3_x");
-//   				}
-//   		});
-//        bt_3_ab.setOnClickListener(new OnClickListener() {
-//   			@Override
-//   			public void onClick(View arg0) {
-//   				switch (bt_3_abState) {
-//   					case 0:
-//   						bt_3_ab.setBackgroundResource(R.drawable.shape_bt1_orange_left_nostroke);
-//   						bt_3_ab.setText("A");
-//   						bt_3_abState = 1;
-//   						break;
-//   					case 1:
-//   						bt_3_ab.setBackgroundResource(R.drawable.shape_bt1_orange_right_nostroke);
-//   						bt_3_ab.setText("B");
-//   						bt_3_abState = 2;
-//   						break;
-//   					case 2:
-//   						bt_3_ab.setBackgroundResource(R.drawable.shape_bt1_nostroke);
-//   						bt_3_ab.setText("A/B");
-//   						bt_3_abState = 0;
-//   						break;
-//   				}
-//   				Log.d("Bt", "bt_3_abState");
-//   			}
-//   		});
-//
-//		Log.d("Bt", "Resolume2Fragment | onCreateView | setupLayer3 setup");
-//		return;
-//	}
-//
-//	void setupLayer4() {
-//		verticalSeekbar4 = (VerticalSeekBar) view.findViewById(R.id.verticalSeekbar4);
-//		verticalSeekbar4_up = (Button) view.findViewById(R.id.verticalSeekbar4_up);
-//        verticalSeekbar4_down = (Button) view.findViewById(R.id.verticalSeekbar4_down);
-//        bt_4_b = (ToggleButton) view.findViewById(R.id.bt_4_b);
-//        bt_4_s = (ToggleButton) view.findViewById(R.id.bt_4_s);
-//        bt_4_x = (Button) view.findViewById(R.id.bt_4_x);
-//        bt_4_ab = (TextView) view.findViewById(R.id.bt_4_ab);
-//
-//  		verticalSeekbar4_up.setOnClickListener(new OnClickListener() {
-//  			@Override
-//  			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer4/" + sliderOSCSendObjPrt, 1);
-//  				verticalSeekbar4Progress = 100;
-//  				verticalSeekbar4Progress2 = verticalSeekbar4Progress;
-//  				verticalSeekbar4.setSecondaryProgress(verticalSeekbar4Progress);
-//  				verticalSeekbar4.setProgressAndThumb(verticalSeekbar4Progress);
-//  				Log.d("Bt", "verticalSeekbar4_up");
-//  			}
-//  		});
-//        verticalSeekbar4.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-//  			@Override
-//  			public void onStopTrackingTouch(SeekBar seekBar4) {
-//  				verticalSeekbar4_inUse = false;
-//  				skdbu4 = false;
-//  				seekBar4.setSecondaryProgress(seekBar4.getProgress());
-//  				verticalSeekbar4Progress2 = verticalSeekbar4Progress;
-//  			}
-//  			@Override
-//  			public void onStartTrackingTouch(SeekBar seekBar4) {
-//  				verticalSeekbar4_inUse = true;
-//  				if (verticalSeekbar4Progress == 0) {skdbu4 = true;}
-//  				seekBar4.setSecondaryProgress(verticalSeekbar4Progress);
-//  				verticalSeekbar4Progress2 = verticalSeekbar4Progress;
-//  			}
-//  			@Override
-//  			public void onProgressChanged(SeekBar seekBar4, int progress4, boolean fromUser) {
-//  				if (verticalSeekbar4_inUse) {
-//		  			if (fromUser) {
-//		  				float progress4b = Utils.ConvertRange(0, 100, 0, 1, progress4);
-//		   				mCallbackOSCSend.onFrag2OSCSendFloat("layer4/" + sliderOSCSendObjPrt, progress4b);
-//		  				if (skdbu4) {seekBar4.setSecondaryProgress(progress4);}
-//		  			}
-//  				}
-//  				verticalSeekbar4Progress = progress4;
-//  			}
-//  		}
-//  		);
-//  		verticalSeekbar4_down.setOnClickListener(new OnClickListener() {
-//  			@Override
-//  			public void onClick(View arg0) {
-//   				mCallbackOSCSend.onFrag2OSCSendFloat("layer4/" + sliderOSCSendObjPrt, 0);
-//  				verticalSeekbar4Progress = 0;
-//  				verticalSeekbar4Progress2 = verticalSeekbar4Progress;
-//  				verticalSeekbar4.setSecondaryProgress(verticalSeekbar4Progress);
-//  				verticalSeekbar4.setProgressAndThumb(verticalSeekbar4Progress);
-//  				Log.d("Bt", "verticalSeekbar4_down");
-//  			}
-//  		});
-//        bt_4_b.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_4_bLock) {
-//					String OSCAddress = "layer4/bypassed";
-//					if (bt_4_bFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_4_s.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View v) {
-//				if (!bt_4_sLock) {
-//					String OSCAddress = "layer4/solo";
-//					if (bt_4_sFlip) {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 0);
-//					} else {
-//						mCallbackOSCSend.onFrag2OSCSendInt(OSCAddress, 1);
-//					}
-//				}
-//			}
-//		});
-//        bt_4_x.setOnClickListener(new OnClickListener() {
-//  			@Override
-//  			public void onClick(View arg0) {
-//				mCallbackOSCSend.onFrag2OSCSendInt("layer4/clear", 1);
-//  				Log.d("Bt", "bt_4_x");
-//  				}
-//  		});
-//        bt_4_ab.setOnClickListener(new OnClickListener() {
-//  			@Override
-//  			public void onClick(View arg0) {
-//  				switch (bt_4_abState) {
-//  					case 0:
-//  						bt_4_ab.setBackgroundResource(R.drawable.shape_bt1_orange_left_nostroke);
-//  						bt_4_ab.setText("A");
-//  						bt_4_abState = 1;
-//  						break;
-//  					case 1:
-//  						bt_4_ab.setBackgroundResource(R.drawable.shape_bt1_orange_right_nostroke);
-//  						bt_4_ab.setText("B");
-//  						bt_4_abState = 2;
-//  						break;
-//  					case 2:
-//  						bt_4_ab.setBackgroundResource(R.drawable.shape_bt1_nostroke);
-//  						bt_4_ab.setText("A/B");
-//  						bt_4_abState = 0;
-//  						break;
-//  				}
-//  				Log.d("Bt", "bt_4_abState");
-//  			}
-//  		});
-//
-//		Log.d("Bt", "Resolume2Fragment | onCreateView | setupLayer4 setup");
-//		return;
-//	}
-
 	void setupCrossbar() {
 		seekBar5 = (SeekBar) view.findViewById(R.id.seekBar5);
 	    bt_seekBar_a = (Button) view.findViewById(R.id.bt_seekBar_a);
         bt_seekBar_b = (Button) view.findViewById(R.id.bt_seekBar_b);
         bt_centerTheSeekBar5 = (Button) view.findViewById(R.id.bt_centerSeekBar5);
-
-//        if (CcSet.i().data2.bt_seekBar_a_state) { bt_seekBar_a.setBackgroundResource(R.drawable.shape_bt1_orange_nostroke); }
-//        else { bt_seekBar_a.setBackgroundResource(R.drawable.ic_bt_left);}
-//        if (CcSet.i().data2.bt_seekBar_b_state) { bt_seekBar_b.setBackgroundResource(R.drawable.shape_bt1_orange_nostroke); }
-//        else { bt_seekBar_b.setBackgroundResource(R.drawable.ic_bt_right);}
-        //bt_seekBar_a.setBackgroundResource(CcSet.i().blue_nostroke_left);
-        //bt_seekBar_b.setBackgroundResource(CcSet.i().blue_nostroke_right);
 
     // bt_centerTheSeekBar5
         bt_centerTheSeekBar5.setOnClickListener(new OnClickListener() {
@@ -949,8 +397,6 @@ public class Resolume2Fragment extends Fragment {
             public void onClick(View arg0) {
                 float progress5b = Utils.ConvertRange(0, 100, 0, 1, 50);        //float 0-1 range -1-1
                 mCallbackOSCSend.onFrag2OSCSendFloat("composition/cross/values", progress5b);
-                //seekBar5.setProgress(50);
-                //seekBar5Prog = 50;
                 Log.d("Bt", "bt_centerTheSeekBar5 centered");
             }
         });
@@ -959,10 +405,6 @@ public class Resolume2Fragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 mCallbackOSCSend.onFrag2OSCSendInt("composition/fadetogroupa", 1);
-                //seekBar5.setProgress(0);
-                //seekBar5Prog = 0;
-                //bt_seekBar_a_state = true;
-                //bt_seekBar_a.setBackgroundResource(R.drawable.shape_bt1_orange_nostroke);
                 Log.d("Bt", "bt_seekBar_a");
             }
         });
@@ -985,7 +427,6 @@ public class Resolume2Fragment extends Fragment {
 				if (fromUser) {
 					float progress5b = Utils.ConvertRange(0, 100, 0, 1, progress5);		//float 0-1 range -1-1
 					mCallbackOSCSend.onFrag2OSCSendFloat("composition/cross/values", progress5b);
-					//runOSCSendFloat("composition/cross/values", progress5b);
 			        CcSet.i().data2.seekBar5Prog = progress5;
 						Log.d("OSC", "Resolume2Fragment seekBar5 | onProgressChanged | fromUser");
 						Log.d("OSC", "Resolume2Fragment seekBar5 | onProgressChanged | seekBar5Progress = " + String.valueOf(progress5));
@@ -1000,16 +441,11 @@ public class Resolume2Fragment extends Fragment {
             @Override
             public void onClick(View arg0) {
                 mCallbackOSCSend.onFrag2OSCSendInt("composition/fadetogroupb", 1);
-                //seekBar5.setProgress(100);
-                //seekBar5Prog = 100;
-                //bt_seekBar_b_state = true;
-                //bt_seekBar_b.setBackgroundResource(R.drawable.shape_bt1_orange_nostroke);
                 Log.d("Bt", "bt_seekBar_b");
             }
         });
         
 		Log.d("Bt", "Resolume2Fragment | onCreateView | setupCrossbar setup");
-		return;
 	}
 
 	@Override
@@ -1044,51 +480,6 @@ public class Resolume2Fragment extends Fragment {
         }
     }
 
-//    public static void updateOSCverticalSeekbar1(float argsVS1) {
-//		if (!verticalSeekbar1_inUse) {
-//			final int verticalSeekBar1ProgIn = Utils.ConvertRange(0, 1, 0, 100, argsVS1);
-//			verticalSeekbar1.post(new Runnable() {
-//				public void run() {
-//					verticalSeekbar1.setProgressAndThumbIn(verticalSeekBar1ProgIn);
-//					verticalSeekbar1.setSecondaryProgress(verticalSeekBar1ProgIn);
-//					}
-//				});
-//		}
-//	}
-//	public static void updateOSCverticalSeekbar2(float argsVS2) {
-//		if (!verticalSeekbar2_inUse) {
-//			final int verticalSeekBar2ProgIn = Utils.ConvertRange(0, 1, 0, 100, argsVS2);
-//			verticalSeekbar2.post(new Runnable() {
-//				public void run() {
-//					verticalSeekbar2.setProgressAndThumbIn(verticalSeekBar2ProgIn);
-//					verticalSeekbar2.setSecondaryProgress(verticalSeekBar2ProgIn);
-//					}
-//				});
-//		}
-//	}
-//	public static void updateOSCverticalSeekbar3(float argsVS3) {
-//		if (!verticalSeekbar3_inUse) {
-//			final int verticalSeekBar3ProgIn = Utils.ConvertRange(0, 1, 0, 100, argsVS3);
-//			verticalSeekbar3.post(new Runnable() {
-//				public void run() {
-//					verticalSeekbar3.setProgressAndThumbIn(verticalSeekBar3ProgIn);
-//					verticalSeekbar3.setSecondaryProgress(verticalSeekBar3ProgIn);
-//					}
-//				});
-//		}
-//	}
-//	public static void updateOSCverticalSeekbar4(float argsVS4) {
-//		if (!verticalSeekbar4_inUse) {
-//			final int verticalSeekBar4ProgIn = Utils.ConvertRange(0, 1, 0, 100, argsVS4);
-//			verticalSeekbar4.post(new Runnable() {
-//				public void run() {
-//					verticalSeekbar4.setProgressAndThumbIn(verticalSeekBar4ProgIn);
-//					verticalSeekbar4.setSecondaryProgress(verticalSeekBar4ProgIn);
-//					}
-//				});
-//		}
-//	}
-
 	public static void updateOSCbt_b (final int pos) {
         bt_b[pos].post(new Runnable() {
             public void run() {
@@ -1115,137 +506,6 @@ public class Resolume2Fragment extends Fragment {
         Log.d("HowFar", "updateOSCInt bt_s In - " + pos);
     }
 
-//    public static void updateOSCbt_1_b(int argBy1) {
-//		bt_1_bLock = true;
-//		int bt_1_bIn = argBy1;
-//		if (bt_1_bIn == 0) {bt_1_bFlip = false;}
-//		else {bt_1_bFlip = true;}
-//		bt_1_b.post(new Runnable() {
-//			public void run() {
-//				//bt_1_b.setChecked(bt_1_bFlip);
-//				if (bt_1_bFlip) {
-//					bt_1_b.setBackgroundResource(orange_on);
-//				} else {
-//					bt_1_b.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_1_b In");
-//	}
-//	public static void updateOSCbt_2_b(int argBy2) {
-//		bt_2_bLock = true;
-//		int bt_2_bIn = argBy2;
-//		if (bt_2_bIn == 0) {bt_2_bFlip = false;}
-//		else {bt_2_bFlip = true;}
-//		bt_2_b.post(new Runnable() {
-//			public void run() {
-//				if (bt_2_bFlip) {
-//					bt_2_b.setBackgroundResource(orange_on);
-//				} else {
-//					bt_2_b.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_2_b In");
-//	}
-//	public static void updateOSCbt_3_b(int argBy3) {
-//		bt_3_bLock = true;
-//		int bt_3_bIn = argBy3;
-//		if (bt_3_bIn == 0) {bt_3_bFlip = false;}
-//		else {bt_3_bFlip = true;}
-//		bt_3_b.post(new Runnable() {
-//			public void run() {
-//				if (bt_3_bFlip) {
-//					bt_3_b.setBackgroundResource(orange_on);
-//				} else {
-//					bt_3_b.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_3_b In");
-//	}
-//	public static void updateOSCbt_4_b(int argBy4) {
-//		bt_4_bLock = true;
-//		int bt_4_bIn = argBy4;
-//		if (bt_4_bIn == 0) {bt_4_bFlip = false;}
-//		else {bt_4_bFlip = true;}
-//		bt_4_b.post(new Runnable() {
-//			public void run() {
-//				if (bt_4_bFlip) {
-//					bt_4_b.setBackgroundResource(orange_on);
-//				} else {
-//					bt_4_b.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_4_b In");
-//	}
-
-//	public static void updateOSCbt_1_s(int argSo1) {
-//		bt_1_sLock = true;
-//		int bt_1_sIn = argSo1;
-//		if (bt_1_sIn == 0) {bt_1_sFlip = false;}
-//		else {bt_1_sFlip = true;}
-//		bt_1_s.post(new Runnable() {
-//			public void run() {
-//				if (bt_1_sFlip) {
-//					bt_1_s.setBackgroundResource(orange_on);
-//				} else {
-//					bt_1_s.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_1_s In");
-//	}
-//	public static void updateOSCbt_2_s(int argSo2) {
-//		bt_2_sLock = true;
-//		int bt_2_sIn = argSo2;
-//		if (bt_2_sIn == 0) {bt_2_sFlip = false;}
-//		else {bt_2_sFlip = true;}
-//		bt_2_s.post(new Runnable() {
-//			public void run() {
-//				if (bt_2_sFlip) {
-//					bt_2_s.setBackgroundResource(orange_on);
-//				} else {
-//					bt_2_s.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_2_s In");
-//	}
-//	public static void updateOSCbt_3_s(int argSo3) {
-//		bt_3_sLock = true;
-//		int bt_3_sIn = argSo3;
-//		if (bt_3_sIn == 0) {bt_3_sFlip = false;}
-//		else {bt_3_sFlip = true;}
-//		bt_3_s.post(new Runnable() {
-//			public void run() {
-//				if (bt_3_sFlip) {
-//					bt_3_s.setBackgroundResource(orange_on);
-//				} else {
-//					bt_3_s.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_3_s In");
-//	}
-//	public static void updateOSCbt_4_s(int argSo4) {
-//		bt_4_sLock = true;
-//		int bt_4_sIn = argSo4;
-//		if (bt_4_sIn == 0) {bt_4_sFlip = false;}
-//		else {bt_4_sFlip = true;}
-//		bt_4_s.post(new Runnable() {
-//			public void run() {
-//				if (bt_4_sFlip) {
-//					bt_4_s.setBackgroundResource(orange_on);
-//				} else {
-//					bt_4_s.setBackgroundResource(orange_off);
-//				}
-//				}
-//			});
-//		Log.d("HowFar", "updateOSCInt bt_4_s In");
-//	}
-	
 	//composition/fadetogroupa
 	public static void updateOSCbt_seek_a(int argp) {
 		//final int bt_aIn = argp; 
@@ -1301,32 +561,6 @@ public class Resolume2Fragment extends Fragment {
             CcSet.i().data2.bt_s_flip[3] = true;
 		}
 
-//	    bt_1_s.setChecked(bt_1_sFlip);
-//	    bt_2_s.setChecked(bt_2_sFlip);
-//	    bt_3_s.setChecked(bt_3_sFlip);
-//        bt_4_s.setChecked(bt_4_sFlip);
-
-//		if (bt_1_sFlip) {
-//			bt_1_s.setBackgroundResource(orange_on);
-//		} else {
-//			bt_1_s.setBackgroundResource(orange_off);
-//		}
-//		if (bt_2_sFlip) {
-//			bt_2_s.setBackgroundResource(orange_on);
-//		} else {
-//			bt_2_s.setBackgroundResource(orange_off);
-//		}
-//		if (bt_3_sFlip) {
-//			bt_3_s.setBackgroundResource(orange_on);
-//		} else {
-//			bt_3_s.setBackgroundResource(orange_off);
-//		}
-//		if (bt_4_sFlip) {
-//			bt_4_s.setBackgroundResource(orange_on);
-//		} else {
-//			bt_4_s.setBackgroundResource(orange_off);
-//		}
-
         for (int i = 0; i < 4; i++) {
             if (CcSet.i().data2.bt_s_flip[i]) { bt_s[i].setBackgroundResource(CcSet.i().orange_on); }
             else { bt_s[i].setBackgroundResource(CcSet.i().orange_off); }
@@ -1337,7 +571,6 @@ public class Resolume2Fragment extends Fragment {
 		// WTF is going on here...
 
 		//set sliders OSC message layerX/sliderOSCSendObjPrt
-    	//if (layerSlidersModeString.equals("0") && prevLayerSlidersMode != 0) {
     	if (CcSet.i().data2.layerSlidersModeInt == 0 && CcSet.i().data2.prevLayerSlidersMode != 0) {
         	sliderOSCSendObjPrt = CcSet.i().data2.sliderOSCSend0;
         	Log.d("Stats", "sliderOSCSendObjPrt " + sliderOSCSendObjPrt);
@@ -1352,8 +585,6 @@ public class Resolume2Fragment extends Fragment {
         	sliderOSCSendObjPrt = CcSet.i().data2.sliderOSCSend2;
         	Log.d("Stats", "layerSlidersMode first setup");
         }
-    	
-		//return;
 	}
 	
 	public void runToast(String text, int length) {
@@ -1367,118 +598,11 @@ public class Resolume2Fragment extends Fragment {
 	}
 
 	private void getSavedState() {
-		//appSettings = PreferenceManager.getDefaultSharedPreferences(this.getActivity());		// ?
-
 		CcSet.i().loadData2(PreferenceManager.getDefaultSharedPreferences(this.getActivity()));
-//		prevLayerSlidersMode = appSettings.getInt("prevLayerSlidersMode", 2);	//this is so dont needlessly double select stuff
-//		layerSlidersModeInt = appSettings.getInt("layerSlidersModeInt", 2);
-//		// 0=Audio 1=AV 2=Video
-//
-//		verticalSeekbar1Progress_audio = appSettings.getInt("verticalSeekbar1Progress_audio", 0);
-//		verticalSeekbar2Progress_audio = appSettings.getInt("verticalSeekbar2Progress_audio", 0);
-//		verticalSeekbar3Progress_audio = appSettings.getInt("verticalSeekbar3Progress_audio", 0);
-//		verticalSeekbar4Progress_audio = appSettings.getInt("verticalSeekbar4Progress_audio", 0);
-//		verticalSeekbar1Progress_av = appSettings.getInt("verticalSeekbar1Progress_av", 0);
-//		verticalSeekbar2Progress_av = appSettings.getInt("verticalSeekbar2Progress_av", 0);
-//		verticalSeekbar3Progress_av = appSettings.getInt("verticalSeekbar3Progress_av", 0);
-//		verticalSeekbar4Progress_av = appSettings.getInt("verticalSeekbar4Progress_av", 0);
-//		verticalSeekbar1Progress_video = appSettings.getInt("verticalSeekbar1Progress_video", 0);
-//		verticalSeekbar2Progress_video = appSettings.getInt("verticalSeekbar2Progress_video", 0);
-//		verticalSeekbar3Progress_video = appSettings.getInt("verticalSeekbar3Progress_video", 0);
-//		verticalSeekbar4Progress_video = appSettings.getInt("verticalSeekbar4Progress_video", 0);
-//
-//		bt_1_bFlip = appSettings.getBoolean("bt_1_bFlip", false);
-//		bt_2_bFlip = appSettings.getBoolean("bt_2_bFlip", false);
-//		bt_3_bFlip = appSettings.getBoolean("bt_3_bFlip", false);
-//		bt_4_bFlip = appSettings.getBoolean("bt_4_bFlip", false);
-//
-//		bt_1_sFlip = appSettings.getBoolean("bt_1_sFlip", false);
-//		bt_2_sFlip = appSettings.getBoolean("bt_2_sFlip", false);
-//		bt_3_sFlip = appSettings.getBoolean("bt_3_sFlip", false);
-//		bt_4_sFlip = appSettings.getBoolean("bt_4_sFlip", false);
-//
-//		bt_1_abState = appSettings.getInt("bt_1_abState", 0);
-//		bt_2_abState = appSettings.getInt("bt_2_abState", 0);
-//		bt_3_abState = appSettings.getInt("bt_3_abState", 0);
-//		bt_4_abState = appSettings.getInt("bt_4_abState", 0);
-//
-//		seekBar5Prog = appSettings.getInt("seekBar5Prog", 50);
-//
-//		bt_seekBar_a_state = appSettings.getBoolean("bt_seekBar_a_state", false);
-//		bt_seekBar_b_state = appSettings.getBoolean("bt_seekBar_b_state", false);
-
-		Log.d("HowFar", "Resolume2Fragment | getSavedState");
-        //return;
+    	Log.d("HowFar", "Resolume2Fragment | getSavedState");
 	}
 
 	private void setState() {
-
-	    //bt_1_b.setChecked(bt_1_bFlip);
-	    //bt_1_s.setChecked(bt_1_sFlip);
-	    //bt_2_b.setChecked(bt_2_bFlip);
-	    //bt_2_s.setChecked(bt_2_sFlip);
-	    //bt_3_b.setChecked(bt_3_bFlip);
-	    //bt_3_s.setChecked(bt_3_sFlip);
-        //bt_4_b.setChecked(bt_4_bFlip);
-        //bt_4_s.setChecked(bt_4_sFlip);
-
-//		if (bt_1_bFlip) { bt_1_b.setBackgroundResource(orange_on); }
-//		else { bt_1_b.setBackgroundResource(orange_off); }
-//		if (bt_2_bFlip) { bt_2_b.setBackgroundResource(orange_on);}
-//		else { bt_2_b.setBackgroundResource(orange_off); }
-//		if (bt_3_bFlip) { bt_3_b.setBackgroundResource(orange_on); }
-//		else { bt_3_b.setBackgroundResource(orange_off); }
-//		if (bt_4_bFlip) { bt_4_b.setBackgroundResource(orange_on); }
-//		else { bt_4_b.setBackgroundResource(orange_off);
-//		}
-//
-//		if (bt_1_sFlip) { bt_1_s.setBackgroundResource(orange_on); }
-//		else { bt_1_s.setBackgroundResource(orange_off); }
-//		if (bt_2_sFlip) { bt_2_s.setBackgroundResource(orange_on);}
-//		else { bt_2_s.setBackgroundResource(orange_off); }
-//		if (bt_3_sFlip) { bt_3_s.setBackgroundResource(orange_on); }
-//		else { bt_3_s.setBackgroundResource(orange_off); }
-//		if (bt_4_sFlip) { bt_4_s.setBackgroundResource(orange_on); }
-//		else { bt_4_s.setBackgroundResource(orange_off);}
-
-        //set vars for verticalSeekbar after setting up the button listeners, otherwise it returns a NULL pointer on resuming..
-//        verticalSeekbar1.setMax(100);
-//	    verticalSeekbar2.setMax(100);
-//	    verticalSeekbar3.setMax(100);
-//	    verticalSeekbar4.setMax(100);
-	    //seekBar5.setMax(100);
-	    
-	    //verticalSeekbar1_inUse = true;
-	    //Log.d("HowFar", "Resolume2Fragment | setState | layerSlidersModeInt = " + CcSet.i().data2.layerSlidersModeInt);
-//	    if (CcSet.i().data2.layerSlidersModeInt == 0) {
-//	    	verticalSeekbar1Progress = verticalSeekbar1Progress_audio;
-//	    	verticalSeekbar2Progress = verticalSeekbar2Progress_audio;
-//	    	verticalSeekbar3Progress = verticalSeekbar3Progress_audio;
-//	    	verticalSeekbar4Progress = verticalSeekbar4Progress_audio;
-//	    } else if (CcSet.i().data2.layerSlidersModeInt == 1) {
-//	    	verticalSeekbar1Progress = verticalSeekbar1Progress_av;
-//	    	verticalSeekbar2Progress = verticalSeekbar2Progress_av;
-//	    	verticalSeekbar3Progress = verticalSeekbar3Progress_av;
-//	    	verticalSeekbar4Progress = verticalSeekbar4Progress_av;
-//	    } else if (CcSet.i().data2.layerSlidersModeInt == 2) {
-//	    	verticalSeekbar1Progress = verticalSeekbar1Progress_video;
-//	    	verticalSeekbar2Progress = verticalSeekbar2Progress_video;
-//	    	verticalSeekbar3Progress = verticalSeekbar3Progress_video;
-//	    	verticalSeekbar4Progress = verticalSeekbar4Progress_video;
-//	    }
-
-//	    verticalSeekbar1.setSecondaryProgress(verticalSeekbar1Progress);
-//	    verticalSeekbar2.setSecondaryProgress(verticalSeekbar2Progress);
-//	    verticalSeekbar3.setSecondaryProgress(verticalSeekbar3Progress);
-//	    verticalSeekbar4.setSecondaryProgress(verticalSeekbar4Progress);
-//
-//        verticalSeekbar1.setProgressAndThumb(verticalSeekbar1Progress);
-//        verticalSeekbar2.setProgressAndThumb(verticalSeekbar2Progress);
-//        verticalSeekbar3.setProgressAndThumb(verticalSeekbar3Progress);
-//        verticalSeekbar4.setProgressAndThumb(verticalSeekbar4Progress);
-        
-        //verticalSeekbar1_inUse = false;
-
         for (int i = 0; i < 4; i++) {
             if (CcSet.i().data2.bt_b_flip[i]) { bt_b[i].setBackgroundResource(CcSet.i().orange_on); }
             else { bt_b[i].setBackgroundResource(CcSet.i().orange_on); }
@@ -1499,55 +623,11 @@ public class Resolume2Fragment extends Fragment {
         seekBar5.setProgress(CcSet.i().data2.seekBar5Prog);
         
         Log.d("HowFar", "Resolume2Fragment | setState");
-        //return;
 	}
 	
 	private void setSavedState() {
-//		appSettings = PreferenceManager.getDefaultSharedPreferences(this.getActivity());		// ?
-//
-//		Editor editor = appSettings.edit();
-//
-//		if (layerSlidersModeInt == 0) {
-//			editor.putInt("verticalSeekbar1Progress_audio", verticalSeekbar1Progress);
-//			editor.putInt("verticalSeekbar2Progress_audio", verticalSeekbar2Progress);
-//			editor.putInt("verticalSeekbar3Progress_audio", verticalSeekbar3Progress);
-//			editor.putInt("verticalSeekbar4Progress_audio", verticalSeekbar4Progress);
-//		} else if (layerSlidersModeInt == 1) {
-//			editor.putInt("verticalSeekbar1Progress_av", verticalSeekbar1Progress);
-//			editor.putInt("verticalSeekbar2Progress_av", verticalSeekbar2Progress);
-//			editor.putInt("verticalSeekbar3Progress_av", verticalSeekbar3Progress);
-//			editor.putInt("verticalSeekbar4Progress_av", verticalSeekbar4Progress);
-//		} else if (layerSlidersModeInt == 2) {
-//			editor.putInt("verticalSeekbar1Progress_video", verticalSeekbar1Progress);
-//			editor.putInt("verticalSeekbar2Progress_video", verticalSeekbar2Progress);
-//			editor.putInt("verticalSeekbar3Progress_video", verticalSeekbar3Progress);
-//			editor.putInt("verticalSeekbar4Progress_video", verticalSeekbar4Progress);
-//		}
-//
-//		editor.putBoolean("bt_1_bFlip", bt_1_bFlip);
-//		editor.putBoolean("bt_2_bFlip", bt_2_bFlip);
-//		editor.putBoolean("bt_3_bFlip", bt_3_bFlip);
-//		editor.putBoolean("bt_4_bFlip", bt_4_bFlip);
-//
-//		editor.putBoolean("bt_1_sFlip", bt_1_sFlip);
-//		editor.putBoolean("bt_2_sFlip", bt_2_sFlip);
-//		editor.putBoolean("bt_3_sFlip", bt_3_sFlip);
-//		editor.putBoolean("bt_4_sFlip", bt_4_sFlip);
-//
-//		editor.putInt("bt_1_abState", bt_1_abState);
-//		editor.putInt("bt_2_abState", bt_2_abState);
-//		editor.putInt("bt_3_abState", bt_3_abState);
-//		editor.putInt("bt_4_abState", bt_4_abState);
-//
-//		editor.putInt("seekBar5Prog", seekBar5Prog);
-//
-//		editor.putBoolean("bt_seekBar_a_state", bt_seekBar_a_state);
-//		editor.putBoolean("bt_seekBar_b_state", bt_seekBar_b_state);
-//
-// 		editor.commit();
  		CcSet.i().saveData2(PreferenceManager.getDefaultSharedPreferences(this.getActivity()));
 		Log.d("HowFar", "Resolume2Fragment | setSavedState");
-        //return;
 	}
 	
 }

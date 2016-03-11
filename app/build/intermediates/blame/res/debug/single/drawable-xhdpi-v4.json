@@ -176,12 +176,12 @@
         "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xhdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
-        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_clear_material.png",
         "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\abc_ic_clear_material.png"
+    },
+    {
+        "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.2.0\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "C:\\TEMP\\software_dev\\android\\StudioProjects\\vResControl\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",

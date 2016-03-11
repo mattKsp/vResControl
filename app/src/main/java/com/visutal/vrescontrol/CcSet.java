@@ -1,8 +1,6 @@
 package com.visutal.vrescontrol;
 
-//import android.app.Application;
 import android.content.SharedPreferences;
-
 import static com.visutal.vrescontrol.R.drawable.ic_bt_left;
 import static com.visutal.vrescontrol.R.drawable.ic_bt_right;
 import static com.visutal.vrescontrol.R.drawable.ic_bt_green_nostroke;
@@ -31,17 +29,10 @@ import static com.visutal.vrescontrol.R.drawable.shape_bt1c_orange;
  * hmm.. protected, public and final can be seen
  */
 
-//public class CcSet extends Application {
 public class CcSet {
 
     private static CcSet ourInstance = new CcSet();
     public static CcSet i() { return ourInstance; }
-
-    // don't really care about private/public for this as they are just the values received via OSC, no point in anybody trying to hacking it..
-//    private boolean testBool;
-//    public boolean getTestBool() { return this.testBool; }
-//    public void setTestBool(boolean val) { this.testBool = val; }
-//    public boolean testBool2 = false;
 
     public final int blue_nostroke_left = ic_bt_left;
     public final int blue_nostroke_right = ic_bt_right;
@@ -57,18 +48,8 @@ public class CcSet {
     public Res4FragData data4 = new Res4FragData();
 
 
-//    @Override
-//    public void onCreate() {
-//        super.onCreate();
-//
-//        data1 = new Res1FragData();
-//        data2 = new Res2FragData();
-//        data4 = new Res4FragData();
-//    }
-
     public void saveAll(SharedPreferences sp) {
         // save all stats to prefs that need saving
-
         saveData1(sp);
         saveData2(sp);
         saveData4(sp);
@@ -88,14 +69,12 @@ public class CcSet {
         ed.putBoolean("confirmX", data1.confirmX);
 
         for (int i = 0; i < 4; i++) {
-            StringBuilder sb = new StringBuilder(16);
-            sb.append("bt_layer_flip").append(i);
-            ed.putBoolean(sb.toString(), data1.bt_layer_flip[i]);
+            String sb = "bt_layer_flip" + i;
+            ed.putBoolean(sb, data1.bt_layer_flip[i]);
         }
         for (int i = 0; i < 7; i++) {
-            StringBuilder sb = new StringBuilder(16);
-            sb.append("bt_beatloop_flip").append(i);
-            ed.putBoolean(sb.toString(), data1.bt_beatloop_flip[i]);
+            String sb = "bt_beatloop_flip" + i;
+            ed.putBoolean(sb, data1.bt_beatloop_flip[i]);
         }
 
         ed.commit();
@@ -111,29 +90,23 @@ public class CcSet {
         //ed.putBoolean("bt_seekBar_b_state", data2.bt_seekBar_b_state);
 
         for (int i = 0; i < 4; i++) {
-            StringBuilder sb0 = new StringBuilder(30);
-            sb0.append("verticalSeekbarProgress_audio").append(i);
-            ed.putInt(sb0.toString(), data2.verticalSeekbarProgress_audio[i]);
+            String sb0 = "verticalSeekbarProgress_audio" + i;
+            ed.putInt(sb0, data2.verticalSeekbarProgress_audio[i]);
 
-            StringBuilder sb1 = new StringBuilder(27);
-            sb1.append("verticalSeekbarProgress_av").append(i);
-            ed.putInt(sb1.toString(), data2.verticalSeekbarProgress_av[i]);
+            String sb1 = "verticalSeekbarProgress_av" + i;
+            ed.putInt(sb1, data2.verticalSeekbarProgress_av[i]);
 
-            StringBuilder sb2 = new StringBuilder(30);
-            sb2.append("verticalSeekbarProgress_video").append(i);
-            ed.putInt(sb2.toString(), data2.verticalSeekbarProgress_video[i]);
+            String sb2 = "verticalSeekbarProgress_video" + i;
+            ed.putInt(sb2, data2.verticalSeekbarProgress_video[i]);
 
-            StringBuilder sb5 = new StringBuilder(12);
-            sb5.append("bt_ab_state").append(i);
-            ed.putInt(sb5.toString(), data2.bt_ab_state[i]);
+            String sb5 = "bt_ab_state" + i;
+            ed.putInt(sb5, data2.bt_ab_state[i]);
 
-            StringBuilder sb3 = new StringBuilder(10);
-            sb3.append("bt_b_flip").append(i);
-            ed.putBoolean(sb3.toString(), data2.bt_b_flip[i]);
+            String sb3 = "bt_b_flip" + i;
+            ed.putBoolean(sb3 , data2.bt_b_flip[i]);
 
-            StringBuilder sb4 = new StringBuilder(11);
-            sb4.append("bt_s_flip").append(i);
-            ed.putBoolean(sb4.toString(), data2.bt_s_flip[i]);
+            String sb4 = "bt_s_flip" + i;
+            ed.putBoolean(sb4, data2.bt_s_flip[i]);
         }
 
         ed.commit();
@@ -144,17 +117,14 @@ public class CcSet {
         ed.putInt("fxSlidersModeInt", data4.fxSlidersModeInt);
 
         for (int i = 0; i < 8; i++) {
-            StringBuilder sb0 = new StringBuilder(32);
-            sb0.append("verticalSeekbar_fxProgress_link").append(i);
-            ed.putInt(sb0.toString(), data4.verticalSeekbar_fxProgress_link[i]);
+            String sb0 = "verticalSeekbar_fxProgress_link" + i;
+            ed.putInt(sb0, data4.verticalSeekbar_fxProgress_link[i]);
 
-            StringBuilder sb1 = new StringBuilder(35);
-            sb1.append("verticalSeekbar_fxProgress_opacity").append(i);
-            ed.putInt(sb1.toString(), data4.verticalSeekbar_fxProgress_opacity[i]);
+            String sb1 = "verticalSeekbar_fxProgress_opacity" + i;
+            ed.putInt(sb1, data4.verticalSeekbar_fxProgress_opacity[i]);
 
-            StringBuilder sb2 = new StringBuilder(13);
-            sb2.append("bt_fx_b_flip").append(i);
-            ed.putBoolean(sb2.toString(), data4.bt_fx_b_flip[i]);
+            String sb2 = "bt_fx_b_flip" + i;
+            ed.putBoolean(sb2, data4.bt_fx_b_flip[i]);
         }
 
         ed.commit();
@@ -184,14 +154,12 @@ public class CcSet {
         t1.confirmX = sp.getBoolean("confirmX", false);
 
         for (int i = 0; i < 4; i++) {
-            StringBuilder sb = new StringBuilder(16);   //64    // choose a good starting size to lower chances of reallocation
-            sb.append("bt_layer_flip").append(i);
-            t1.bt_layer_flip[i] = sp.getBoolean(sb.toString(), false);
+            String sb = "bt_layer_flip" + i;
+            t1.bt_layer_flip[i] = sp.getBoolean(sb, false);
         }
         for (int i = 0; i < 7; i++) {
-            StringBuilder sb = new StringBuilder(16);
-            sb.append("bt_beatloop_flip").append(i);
-            t1.bt_beatloop_flip[i] = sp.getBoolean(sb.toString(), false);
+            String sb = "bt_beatloop_flip" + i;
+            t1.bt_beatloop_flip[i] = sp.getBoolean(sb, false);
         }
 
         // copy temp to actual
@@ -209,29 +177,23 @@ public class CcSet {
         //t2.bt_seekBar_b_state = sp.getBoolean("bt_seekBar_b_state", false);
 
         for (int i = 0; i < 4; i++) {
-            StringBuilder sb0 = new StringBuilder(30);
-            sb0.append("verticalSeekbarProgress_audio").append(i);
-            t2.verticalSeekbarProgress_audio[i] = sp.getInt(sb0.toString(), 0);
+            String sb0 = "verticalSeekbarProgress_audio" + i;
+            t2.verticalSeekbarProgress_audio[i] = sp.getInt(sb0, 0);
 
-            StringBuilder sb1 = new StringBuilder(27);
-            sb1.append("verticalSeekbarProgress_av").append(i);
-            t2.verticalSeekbarProgress_av[i] = sp.getInt(sb1.toString(), 0);
+            String sb1 = "verticalSeekbarProgress_av" + i;
+            t2.verticalSeekbarProgress_av[i] = sp.getInt(sb1, 0);
 
-            StringBuilder sb2 = new StringBuilder(30);
-            sb2.append("verticalSeekbarProgress_video").append(i);
-            t2.verticalSeekbarProgress_video[i] = sp.getInt(sb2.toString(), 0);
+            String sb2 = "verticalSeekbarProgress_video" + i;
+            t2.verticalSeekbarProgress_video[i] = sp.getInt(sb2, 0);
 
-            StringBuilder sb5 = new StringBuilder(12);
-            sb5.append("bt_ab_state").append(i);
-            t2.bt_ab_state[i] = sp.getInt(sb5.toString(), 0);
+            String sb5 = "bt_ab_state" + i;
+            t2.bt_ab_state[i] = sp.getInt(sb5, 0);
 
-            StringBuilder sb3 = new StringBuilder(10);
-            sb3.append("bt_b_flip").append(i);
-            t2.bt_b_flip[i] = sp.getBoolean(sb3.toString(), false);
+            String sb3 = "bt_b_flip" + i;
+            t2.bt_b_flip[i] = sp.getBoolean(sb3, false);
 
-            StringBuilder sb4 = new StringBuilder(11);
-            sb4.append("bt_s_flip").append(i);
-            t2.bt_s_flip[i] = sp.getBoolean(sb4.toString(), false);
+            String sb4 = "bt_s_flip" + i;
+            t2.bt_s_flip[i] = sp.getBoolean(sb4, false);
         }
 
         data2 = t2;
@@ -242,19 +204,20 @@ public class CcSet {
         t4.fxSlidersModeInt = sp.getInt("fxSlidersModeInt", 0);
 
         for (int i = 0; i < 8; i++) {
-            StringBuilder sb0 = new StringBuilder(32);
-            sb0.append("verticalSeekbar_fxProgress_link").append(i);
-            t4.verticalSeekbar_fxProgress_link[i] = sp.getInt(sb0.toString(), 0);
+            String sb0 = "verticalSeekbar_fxProgress_link" + i;
+            t4.verticalSeekbar_fxProgress_link[i] = sp.getInt(sb0, 0);
 
-            StringBuilder sb1 = new StringBuilder(35);
-            sb1.append("verticalSeekbar_fxProgress_opacity").append(i);
-            t4.verticalSeekbar_fxProgress_opacity[i] = sp.getInt(sb1.toString(), 0);
+            String sb1 = "verticalSeekbar_fxProgress_opacity" + i;
+            t4.verticalSeekbar_fxProgress_opacity[i] = sp.getInt(sb1, 0);
 
-            StringBuilder sb2 = new StringBuilder(13);
-            sb2.append("bt_fx_b_flip").append(i);
-            t4.bt_fx_b_flip[i] = sp.getBoolean(sb2.toString(), false);
+            String sb2 = "bt_fx_b_flip" + i;
+            t4.bt_fx_b_flip[i] = sp.getBoolean(sb2, false);
         }
 
         data4 = t4;
+    }
+
+    public void resetAll(SharedPreferences sp) {
+        // see Settings clearSavedStates ..until all moved
     }
 }
