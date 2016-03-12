@@ -26,7 +26,6 @@ import static com.visutal.vrescontrol.R.drawable.shape_bt1c_orange;
  * static - only 1 copy (final has this one covered most times). associated with the class as a whole, rather than with any object of the class.
  * final - cos there can only be one (and it can't be changed)
  *
- * hmm.. protected, public and final can be seen
  */
 
 public class CcSet {

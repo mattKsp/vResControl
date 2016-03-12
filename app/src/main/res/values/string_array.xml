@@ -11,19 +11,7 @@
 		<item >1</item>
 		<item >2</item>
 	</string-array>
-	
-	<string-array name="todo">
-		<item >Running a bit slow, need to consolidate some processes</item>
-		<item >Layer A.B buttons not implemented</item>
-		<item >Fx link up.down buttons not implemented</item>
-		<item >Fx Bypass and Solo buttons not implemented</item>
-		<item >Make larger device layouts</item>
-	</string-array>
-	<string-array name="bugs">
-		<item >Tends to crash when device goes to sleep</item>
-		<item >Fx links sometimes don\'t update if the page is hidden</item>
-	</string-array>
-	
+
 	<string-array name="layerSlidersMode">
 		<item >Audio</item>
 		<item >AV</item>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:orientation="horizontal"
-    android:background="@drawable/bg_visutal_logo2_800x480"
+    android:background="@drawable/bg_logo2_800x480"
     android:weightSum="11"
     tools:context=".VresControlActivity" >
          

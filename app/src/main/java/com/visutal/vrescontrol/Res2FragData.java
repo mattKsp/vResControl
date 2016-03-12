@@ -13,6 +13,7 @@ public class Res2FragData {
     // saved to prefs
     public int prevLayerSlidersMode = 2;                            //this is so dont needlessly double select stuff
     public int layerSlidersModeInt = 2;                             // 0=Audio 1=AV 2=Video
+    private int[] _tempVseekBar;
     public int[] verticalSeekbarProgress_audio = new int[4];        // 1-4
     public int[] verticalSeekbarProgress_av = new int[4];           // 1-4
     public int[] verticalSeekbarProgress_video = new int[4];        // 1-4
@@ -23,4 +24,38 @@ public class Res2FragData {
     public boolean[] bt_s_flip = new boolean[4];        // 1-4
 
     // not saved to prefs
+
+    public int GetVerticalSeekbarProgress(int i) {
+        int t = 0;
+       switch (layerSlidersModeInt) {
+           case 0:
+               t = verticalSeekbarProgress_audio[i];
+               break;
+           case 1:
+               t = verticalSeekbarProgress_av[i];
+               break;
+           case 2:
+               t = verticalSeekbarProgress_video[i];
+               break;
+           default:
+               break;
+       }
+       return t;
+    }
+
+    public void SetVerticalSeekbarProgress(int i, int value) {
+        switch (layerSlidersModeInt) {
+            case 0:
+                verticalSeekbarProgress_audio[i] = value;
+                break;
+            case 1:
+                verticalSeekbarProgress_av[i] = value;
+                break;
+            case 2:
+                verticalSeekbarProgress_video[i] = value;
+                break;
+            default:
+                break;
+        }
+    }
 }

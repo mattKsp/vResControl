@@ -140,10 +140,10 @@ public class Resolume2Fragment extends Fragment {
         viewID_bt_s[2] = R.id.bt_3_s;
         viewID_bt_s[3] = R.id.bt_4_s;
 
-        viewID_bt_s[0] = R.id.bt_1_x;
-        viewID_bt_s[1] = R.id.bt_2_x;
-        viewID_bt_s[2] = R.id.bt_3_x;
-        viewID_bt_s[3] = R.id.bt_4_x;
+        viewID_bt_x[0] = R.id.bt_1_x;
+        viewID_bt_x[1] = R.id.bt_2_x;
+        viewID_bt_x[2] = R.id.bt_3_x;
+        viewID_bt_x[3] = R.id.bt_4_x;
 
         viewID_bt_ab[0] = R.id.bt_1_ab;
         viewID_bt_ab[1] = R.id.bt_2_ab;
@@ -172,27 +172,10 @@ public class Resolume2Fragment extends Fragment {
         verticalSeekbar[i] = (VerticalSeekBar) view.findViewById(viewID_verticalSeekBar[i]);
         verticalSeekbar_down[i] = (Button) view.findViewById(viewID_verticalSeekBar_down[i]);
 
-//        int[] verticalSeekbarProgress_TEMP = new int[8];
-//        if (CcSet.i().data2.layerSlidersModeInt == 0) { verticalSeekbarProgress_TEMP = CcSet.i().data2.verticalSeekbarProgress_audio; }
-//        else if (CcSet.i().data2.layerSlidersModeInt == 1) { verticalSeekbarProgress_TEMP = CcSet.i().data2.verticalSeekbarProgress_av; }
-//        else if (CcSet.i().data2.layerSlidersModeInt == 2) { verticalSeekbarProgress_TEMP = CcSet.i().data2.verticalSeekbarProgress_video; }
-
-//        switch (CcSet.i().data2.layerSlidersModeInt) {
-//            case '0':
-//
-//                break;
-//            case '1':
-//
-//                break;
-//            case '2':
-//
-//                break;
-//        }
-
         bt_b[i] = (Button) view.findViewById(viewID_bt_b[i]);
         bt_s[i] = (Button) view.findViewById(viewID_bt_s[i]);
         bt_x[i] = (Button) view.findViewById(viewID_bt_x[i]);
-        bt_ab[i] = (Button) view.findViewById(viewID_bt_ab[i]);
+        bt_ab[i] = (TextView) view.findViewById(viewID_bt_ab[i]);
 
         verticalSeekbar_up[i].setOnClickListener(new OnClickListener() {
             @Override
@@ -202,17 +185,9 @@ public class Resolume2Fragment extends Fragment {
                 //verticalSeekbarProgress2[i] = verticalSeekbarProgress[i];
                 verticalSeekbar[i].setSecondaryProgress(verticalSeekbarProgress2[i]);   // not saved
                 //verticalSeekbar[i].setProgressAndThumb(verticalSeekbarProgress[i]);
-                switch (CcSet.i().data2.layerSlidersModeInt) {
-                    case '0':
-                        CcSet.i().data2.verticalSeekbarProgress_audio[i] = 100;
-                        break;
-                    case '1':
-                        CcSet.i().data2.verticalSeekbarProgress_av[i] = 100;
-                        break;
-                    case '2':
-                        CcSet.i().data2.verticalSeekbarProgress_video[i] = 100;
-                        break;
-                }
+
+                CcSet.i().data2.SetVerticalSeekbarProgress(i, 100);
+
                 verticalSeekbarProgress2[i] = 100;
                 verticalSeekbar[i].setProgressAndThumb(100);
                 Log.d("Bt", "verticalSeekbar_up " + i);
@@ -225,20 +200,10 @@ public class Resolume2Fragment extends Fragment {
                                                               skdbu[i] = false;
                                                               //seekBar1.setSecondaryProgress(verticalSeekbarProgress[i]);
                                                               //verticalSeekbarProgress2[i] = verticalSeekbarProgress[i];
-                                                              switch (CcSet.i().data2.layerSlidersModeInt) {
-                                                                  case '0':
-                                                                      seekBar1.setSecondaryProgress(CcSet.i().data2.verticalSeekbarProgress_audio[i]);
-                                                                      verticalSeekbarProgress2[i] = CcSet.i().data2.verticalSeekbarProgress_audio[i];
-                                                                      break;
-                                                                  case '1':
-                                                                      seekBar1.setSecondaryProgress(CcSet.i().data2.verticalSeekbarProgress_av[i]);
-                                                                      verticalSeekbarProgress2[i] = CcSet.i().data2.verticalSeekbarProgress_av[i];
-                                                                      break;
-                                                                  case '2':
-                                                                      seekBar1.setSecondaryProgress(CcSet.i().data2.verticalSeekbarProgress_video[i]);
-                                                                      verticalSeekbarProgress2[i] = CcSet.i().data2.verticalSeekbarProgress_audio[i];
-                                                                      break;
-                                                              }
+
+                                                              seekBar1.setSecondaryProgress(CcSet.i().data2.GetVerticalSeekbarProgress(i));
+                                                              verticalSeekbarProgress2[i] = CcSet.i().data2.GetVerticalSeekbarProgress(i);
+
                                                               Log.d("OSC", "Resolume2Fragment seekBar | onStopTrackingTouch");
                                                           }
 
@@ -290,17 +255,7 @@ public class Resolume2Fragment extends Fragment {
                                                                   }
                                                               }
                                                               //verticalSeekbarProgress[i] = progress1;
-                                                              switch (CcSet.i().data2.layerSlidersModeInt) {
-                                                                    case '0':
-                                                                        CcSet.i().data2.verticalSeekbarProgress_audio[i] = progress1;
-                                                                        break;
-                                                                    case '1':
-                                                                        CcSet.i().data2.verticalSeekbarProgress_av[i] = progress1;
-                                                                        break;
-                                                                    case '2':
-                                                                        CcSet.i().data2.verticalSeekbarProgress_video[i] = progress1;
-                                                                        break;
-                                                              }
+                                                              CcSet.i().data2.SetVerticalSeekbarProgress(i, progress1);
                                                           }
                                                       }
         );
@@ -310,17 +265,7 @@ public class Resolume2Fragment extends Fragment {
                 mCallbackOSCSend.onFrag2OSCSendFloat(s_seek, 0);
                 //verticalSeekbarProgress[i] = 0;
                 //verticalSeekbarProgress2[i] = verticalSeekbarProgress[i];
-                switch (CcSet.i().data2.layerSlidersModeInt) {
-                    case '0':
-                        CcSet.i().data2.verticalSeekbarProgress_audio[i] = 0;
-                        break;
-                    case '1':
-                        CcSet.i().data2.verticalSeekbarProgress_av[i] = 0;
-                        break;
-                    case '2':
-                        CcSet.i().data2.verticalSeekbarProgress_video[i] = 0;
-                        break;
-                }
+                CcSet.i().data2.SetVerticalSeekbarProgress(i, 0);
                 verticalSeekbarProgress2[i] = 0;
                 verticalSeekbar[i].setSecondaryProgress(verticalSeekbarProgress2[i]);
                 //verticalSeekbar[i].setProgressAndThumb(verticalSeekbarProgress[i]);
@@ -469,10 +414,11 @@ public class Resolume2Fragment extends Fragment {
             verticalSeekbar[pos].post(new Runnable() {
                 public void run() {
                     int i = 0;
-                    if(CcSet.i().data2.layerSlidersModeInt == 0) { i = CcSet.i().data2.verticalSeekbarProgress_audio[pos]; }
-                    else if(CcSet.i().data2.layerSlidersModeInt == 1) { i = CcSet.i().data2.verticalSeekbarProgress_av[pos]; }
-                    else if(CcSet.i().data2.layerSlidersModeInt == 2) { i = CcSet.i().data2.verticalSeekbarProgress_video[pos]; }
+//                    if(CcSet.i().data2.layerSlidersModeInt == 0) { i = CcSet.i().data2.verticalSeekbarProgress_audio[pos]; }
+//                    else if(CcSet.i().data2.layerSlidersModeInt == 1) { i = CcSet.i().data2.verticalSeekbarProgress_av[pos]; }
+//                    else if(CcSet.i().data2.layerSlidersModeInt == 2) { i = CcSet.i().data2.verticalSeekbarProgress_video[pos]; }
 
+                    i = CcSet.i().data2.GetVerticalSeekbarProgress(pos);
                     verticalSeekbar[pos].setProgressAndThumbIn(i);
                     verticalSeekbar[pos].setSecondaryProgress(i);
                 }
@@ -612,9 +558,10 @@ public class Resolume2Fragment extends Fragment {
             verticalSeekbar[i].setMax(100);
 
             int vsp = 0;
-            if (CcSet.i().data2.layerSlidersModeInt == 0) { vsp = CcSet.i().data2.verticalSeekbarProgress_audio[i]; }
-            else if (CcSet.i().data2.layerSlidersModeInt == 1) { vsp = CcSet.i().data2.verticalSeekbarProgress_av[i]; }
-            else if (CcSet.i().data2.layerSlidersModeInt == 2) { vsp = CcSet.i().data2.verticalSeekbarProgress_video[i]; }
+//            if (CcSet.i().data2.layerSlidersModeInt == 0) { vsp = CcSet.i().data2.verticalSeekbarProgress_audio[i]; }
+//            else if (CcSet.i().data2.layerSlidersModeInt == 1) { vsp = CcSet.i().data2.verticalSeekbarProgress_av[i]; }
+//            else if (CcSet.i().data2.layerSlidersModeInt == 2) { vsp = CcSet.i().data2.verticalSeekbarProgress_video[i]; }
+            vsp = CcSet.i().data2.GetVerticalSeekbarProgress(i);
             verticalSeekbar[i].setSecondaryProgress(vsp);
             verticalSeekbar[i].setProgressAndThumb(vsp);
         }
