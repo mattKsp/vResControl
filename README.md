@@ -1,6 +1,8 @@
-*Work on this app has ceased. 
-*I made several mistakes, which will require a re-write, notably the way the buttons are handled. They should send message, then wait for the return confirmation before lighting up. 
-*Due to the need to re-write I bought a copy of a popular 'OSC/MIDI, make your own templates' app for my new tablet. *Basically, I have learnt my lessons, but do not have another 6 months for a re-write.
+* Work on this app has ceased. 
+* I made several mistakes, which will require a re-write, notably the way the buttons are handled. They should send message, then wait for the return confirmation before lighting up.
+* also the problem with OCS bundles is way beyond my pay grade.
+* Due to the need to re-write I bought a copy of a popular 'OSC/MIDI, make your own templates' app for my new tablet. 
+* ..basically, I have learnt my lessons, but do not have another 6 months for a re-write.
 
 # vResControl
 
