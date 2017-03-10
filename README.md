@@ -29,6 +29,16 @@ and there are not many different ways to re-arrange things in grids.
 Communication is done via OSC/UDP over WIFI/LAN. Resolume accepts input from many devices at once, 
 this enables several people to VJ together pretty easily (..but unfortunately Resolume can only talk back to 1 device).
 
+<p align="center">
+  <img src="vResControl/images/vResControl-0.jpg" width="350"/>
+  <img src="vResControl/images/vResControl-1.jpg" width="350"/>
+  <img src="vResControl/images/vResControl-2.jpg" width="350"/>
+  <img src="vResControl/images/vResControl-3.jpg" width="350"/>
+  <img src="vResControl/images/vResControl-4.jpg" width="350"/>
+  <img src="vResControl/images/vResControl-5.jpg" width="350"/>
+  <img src="vResControl/images/vResControl-6.jpg" width="350"/>
+</p>
+
 ### Licences
 
 * Written by M.Standish (mattKsp) 2016 (..this is available to anyone for free, i don't care that much, just don't steal my name).
